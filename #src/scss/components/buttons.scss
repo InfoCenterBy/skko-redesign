@@ -1,0 +1,327 @@
+@use "../functional/variables.scss" as *;
+
+button:disabled,
+button.disabled {
+  cursor: not-allowed;
+}
+button {
+  @media (hover: none) {
+    &:focus,
+    &:active {
+      outline: 1px solid transparent;
+    }
+  }
+}
+.btn-base-style {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  font-family: $ff-exo;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 100%;
+  letter-spacing: 0;
+  border-radius: 6.25rem;
+  width: fit-content;
+  transition: all 0.3s ease-in;
+  @media #{$ui-laptop} {
+    font-size: 1.125rem;
+    padding: 0.75rem 1rem;
+  }
+}
+.btn-default,
+.btn-empty,
+.btn-deny,
+.btn-round {
+  @extend .btn-base-style;
+}
+
+.blind-button {
+  gap: 0.75rem;
+  .bi {
+    max-height: 18px;
+  }
+}
+.top-header-button {
+  font-size: var(--base-font);
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0;
+  font-family: $ff-roboto;
+  color: var(--color-violet);
+  transition: all 0.3s ease-in;
+  @include hover("color", var(--color-violet-hover));
+  padding: 0;
+  &.active {
+    text-decoration: underline var(--color-violet);
+    text-underline-offset: 0.25rem;
+  }
+}
+.btn-collapse-more {
+  display: none;
+  &.collapsed {
+    display: block;
+  }
+  &::after {
+    @extend .bootsrtap-icon;
+    content: "\F282";
+  }
+}
+.header {
+  .btn-collapse-more,
+  .btn-collapse-more-hidden {
+    color: var(--color-gray-txt);
+    font-family: $ff-roboto;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0;
+    user-select: none;
+    transition: all 0.3s ease-in;
+    @include hover("color", var(--color-violet));
+  }
+}
+.btn-collapse-more-hidden {
+  display: block;
+  &.collapsed {
+    display: none;
+  }
+  &::after {
+    @extend .bootsrtap-icon;
+    content: "\F286";
+  }
+}
+.collapsed-more-btn-flex {
+  display: none;
+  &.collapsed {
+    display: flex;
+  }
+}
+.btn-default {
+  color: var(--color-white);
+  background-color: var(--color-violet);
+  border: 1.5px solid transparent;
+  width: fit-content;
+  &:not([disabled], .disabled) {
+    @include hover("background-color", var(--color-violet-hover));
+  }
+  &:focus,
+  &:active {
+    background-color: var(--color-dark-violet);
+  }
+  &:disabled,
+  &.disabled {
+    background-color: var(--color-gray-stroke);
+    cursor: not-allowed;
+  }
+}
+.btn-empty {
+  border: 1px solid var(--color-violet);
+  color: var(--color-violet);
+  background-color: transparent;
+  &:not([disabled], .disabled) {
+    @include hover("background-color", var(--color-violet-hover));
+    @include hover("border-color", var(--color-violet-hover));
+    @include hover("color", var(--color-white));
+  }
+  &:focus,
+  &:active {
+    border-color: var(--color-dark-violet);
+  }
+  &:disabled,
+  &.disabled {
+    color: var(--color-gray-stroke);
+    border-color: var(--color-gray-stroke);
+    cursor: not-allowed;
+  }
+}
+.btn-deny {
+  background-color: var(--color-red-attention);
+  color: var(--color-white);
+  &:not([disabled], .disabled) {
+    @include hover("background-color", var(--color-red-hover));
+  }
+  &:focus,
+  &:active {
+    background-color: var(--color-red-pressed);
+  }
+  &:disabled,
+  &.disabled {
+    background-color: var(--color-gray-stroke);
+    cursor: not-allowed;
+  }
+}
+.btn-close:focus {
+  box-shadow: none;
+}
+
+.button-bin {
+  font-size: 1.25rem;
+  color: var(--color-gray-txt);
+  transition: all 0.3s ease-in;
+  @include hover("color", var(--color-violet-hover));
+}
+
+.btn-round {
+  min-width: 48px;
+  min-height: 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  padding: 0.875rem;
+  @media #{$ui-tablet} {
+    padding: 0.5rem;
+  }
+}
+
+.btn-up {
+  position: fixed;
+  width: 2.625rem;
+  height: 42px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: 1.5px solid var(--color-gray-stroke);
+  color: var(--color-violet);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  bottom: 27%;
+  left: 86%;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition-3;
+  background: var(--color-white);
+
+  /* Hide default border when progress is visible */
+  &.progress-active {
+    border-color: transparent;
+  }
+
+  .bi {
+    line-height: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  @media #{$ui-bs-sm} {
+    left: 90%;
+  }
+  @media #{$ui-bs-md} {
+    left: 94%;
+  }
+}
+
+.btn-up {
+  position: fixed;
+  width: 2.625rem;
+  height: 42px;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: 1.5px solid var(--color-gray-stroke);
+  color: var(--color-violet);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  bottom: 27%;
+  left: 86%;
+  opacity: 0;
+  visibility: hidden;
+  transition: $transition-3;
+  background: var(--color-white);
+
+  /* Hide default border when progress is visible */
+  &.progress-active {
+    border-color: transparent;
+  }
+
+  .bi {
+    line-height: 0;
+    position: relative;
+    z-index: 1;
+  }
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+    z-index: 3;
+  }
+  @media #{$ui-bs-sm} {
+    left: 90%;
+  }
+  @media #{$ui-bs-md} {
+    left: 94%;
+  }
+}
+
+/* SVG progress circle styles */
+.btn-up-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  circle {
+    transition: stroke-dashoffset 0.3s ease-out;
+  }
+
+  .btn-up-progress-track {
+    stroke: var(--color-gray-stroke);
+    stroke-width: 1.5px;
+    opacity: 0.3;
+  }
+}
+
+.btn-default.btn-default-yellow {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+  @include hover("background-color", var(--color-yellow-hover));
+  &.disabled {
+    background-color: var(--color-gray-stroke);
+    color: var(--color-white);
+    border-color: var(--color-transparent);
+    cursor: not-allowed;
+  }
+}
+.btn-default.btn-default-green {
+  background-color: var(--color-mns-green);
+  color: var(--color-white);
+  @include hover("background-color", var(--color-mns-green-hover));
+  &.disabled,
+  &:disabled {
+    background-color: var(--color-gray-stroke);
+    color: var(--color-white);
+    border-color: var(--color-transparent);
+    cursor: not-allowed;
+  }
+}
+.btn-default.btn-default-gold {
+  background-color: var(--color-taxes-gold);
+  color: var(--color-white);
+  @include hover("background-color", var(--color-taxes-gold-light));
+  @include hover("color", var(--color-black));
+  &.disabled {
+    background-color: var(--color-gray-stroke);
+    color: var(--color-white);
+    border-color: var(--color-transparent);
+    cursor: not-allowed;
+  }
+}
+.btn-empty.btn-empty-green {
+  background-color: transparent;
+  border: 1px solid var(--color-taxes-green);
+  color: var(--color-taxes-green);
+  @include hover("background-color", var(--color-taxes-green));
+  @include hover("color", var(--color-white));
+  &.disabled {
+    background-color: var(--color-gray-stroke);
+    color: var(--color-white);
+    border-color: var(--color-transparent);
+    cursor: not-allowed;
+  }
+}
