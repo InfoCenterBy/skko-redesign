@@ -1,5 +1,13 @@
-@use "./functional/normalize.scss";
-@use "./libs/bootstrap.min.scss";
-@use "./functional/fonts.scss";
-@use "./functional/variables.scss";
-@use "./components/buttons.scss";
+@import "./libs/bootstrap.min.scss";
+@import "./functional/normalize.scss";
+@import "./functional/fonts.scss";
+@import "./functional/bootstrap-icons.scss";
+@import "./functional/variables.scss";
+@import "./components/buttons.scss";
+@import "./components/header.scss";
+@import "./components/floating-label.scss";
+
+.container {
+  max-width: 1540px;
+  padding-inline: 20px;
+}

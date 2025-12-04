@@ -18,7 +18,7 @@ let path = {
     css: [source_folder + "/scss/style.scss"],
     js: [source_folder + "/js/script.js"],
     img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-    fonts: source_folder + "/fonts/*.ttf",
+    fonts: [source_folder + "/fonts/*.ttf", source_folder + "/fonts/*.woff", source_folder + "/fonts/*.woff2"],
     audio: source_folder + "/audio/*.mp3",
   },
   watch: {
@@ -78,6 +78,7 @@ function css() {
       .pipe(
         scss({
           outputStyle: "expanded",
+          quietDeps: true,
         })
       )
       // .pipe(group_media())

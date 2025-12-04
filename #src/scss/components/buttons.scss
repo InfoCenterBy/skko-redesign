@@ -1,5 +1,3 @@
-@use "../functional/variables.scss" as *;
-
 button:disabled,
 button.disabled {
   cursor: not-allowed;
@@ -13,6 +11,7 @@ button {
   }
 }
 .btn-base-style {
+  text-decoration: none;
   display: grid;
   place-items: center;
   text-align: center;

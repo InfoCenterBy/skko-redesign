@@ -1,0 +1,142 @@
+.floating-label-content {
+  position: relative;
+  z-index: 2;
+  input[type="date"] {
+    display: block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+}
+.floating-label {
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: var(--color-gray-txt);
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+  left: 16px;
+  top: 13px;
+  padding: 0 5px;
+  background-color: var(--color-white);
+  transition: $transition-2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-clamp: 1;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.floating-input:focus ~ .floating-label.floating-label-violet {
+  background-color: var(--color-violet-light);
+  color: var(--color-black);
+}
+
+.floating-input:not(:placeholder-shown) ~ .floating-label.floating-label-violet {
+  background-color: var(--color-violet-light);
+  color: var(--color-black);
+}
+
+header.header {
+  .floating-label-content {
+    z-index: 1057;
+  }
+  .floating-label {
+    z-index: 1057;
+  }
+}
+
+.floating-input {
+  display: block;
+  width: 100%;
+  padding: 0 1rem;
+  background-color: var(--color-white);
+  color: var(--color-gray-txt);
+  border: 1.5px solid var(--color-transparent);
+  border-color: var(--color-gray-stroke);
+  border-radius: 9.375rem;
+  box-sizing: border-box;
+  transition: $transition-2;
+  height: 48px;
+  font-size: 1rem;
+  &:focus {
+    outline: none;
+    border: 1.5px solid var(--color-violet);
+    ~ .floating-label {
+      top: -8px;
+    }
+  }
+  &.disabled,
+  &:disabled {
+    cursor: not-allowed;
+    background-color: var(--color-gray-bg-illustr);
+    color: var(--color-gray-txt);
+    border-color: var(--color-gray-stroke);
+    ~ .floating-label {
+      color: var(--color-gray-txt);
+      background-color: var(--color-gray-bg-illustr);
+    }
+  }
+}
+
+.floating-label-content:not(.floating-input-error) {
+  .floating-input:not(:focus, :disabled) {
+    @include hover("border-color", var(--color-violet-hover));
+  }
+}
+
+.floating-input:disabled,
+.floating-input.disabled {
+  cursor: not-allowed;
+}
+
+.floating-input:not(:placeholder-shown) ~ .floating-label {
+  top: -8px;
+}
+
+.floating-input:not(:placeholder-shown) {
+  color: var(--color-black);
+}
+
+.floating-input-error {
+  .floating-input {
+    border: 1px solid var(--color-red-error);
+    color: var(--color-red-error);
+  }
+  .floating-label {
+    font-weight: 600;
+    color: var(--color-red-error);
+  }
+}
+.password-icon {
+  background-color: var(--color-white);
+  position: relative;
+  width: 0;
+  right: 16px;
+  top: -40px;
+  font-size: 1.25rem;
+  color: var(--color-gray-txt);
+}
+
+.floating-label-content.invalid {
+  .password-icon {
+    top: -60px;
+  }
+}
+
+.floating-label-content.invalid {
+  .floating-input {
+    border-color: var(--color-red-error);
+  }
+  .floating-label-error {
+    display: block;
+    color: var(--color-red-attention);
+    font-size: 0.875rem;
+    user-select: none;
+  }
+}
+.floating-label-content:not(.invalid) {
+  .floating-label-error {
+    display: none;
+  }
+}

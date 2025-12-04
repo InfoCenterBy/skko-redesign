@@ -1,80 +1,78 @@
 <header class="header">
-  <div class="header-container w-100">
-    <div class="bg-gray-bg-illustr d-lg-block d-none">
-      <div class="container">
-        <div class="d-flex flex-row justify-content-between align-items-center flex-wrap w-100 py-2">
-          <div class="language-block d-flex flex-row gap-3">
-            <button class="language-button top-header-button active">
-              РУС
-            </button>
-            <button class="language-button top-header-button">
-              БЕЛ
-            </button>
-            <button class="language-button top-header-button">
-              EN
-            </button>
-          </div>
-          <div class="blind-block">
-            <button class="blind-button top-header-button d-flex flex-row justify-content-center flex-wrap align-items-center">
-              <span>
-                Версия для слабовидящих
-              </span>
-              <i class="bi bi-eye"></i>
-            </button>
-          </div>
-        </div>
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center py-3">
+      <div class="header-logo">
+        <a class="d-flex flex-row align-items-center" href="/">
+          <img src="./img/icons/header-logo.png" alt="" width="56" height="56">
+          <p class="header-logo__text">
+            Республиканское унитарное предприятие «Информационно-издательский центр поналогам и сборам»
+          </p>
+        </a>
       </div>
-    </div>
-    <div class="container mt-12">
-      <div class="row align-items-center justify-content-between">
-        <div class="col-xxl-3 col-lg-4 col-2">
-          <a href="index.html" class="header-logo w-100 d-flex flex-row align-items-center gap-1">
+      <div class="d-flex flex-column">
+        <div class="d-flex flex-row w-100 justify-content-md-between justify-content-center ">
+          <div class="search-block d-lg-block d-none">
 
-            <img src="./img/icons/header-logo.png" alt="">
-
-            <p class="d-lg-block d-none">
-              Республиканское унитарное предприятие <br>
-              «Информационно-издательский центр <br>
-              по налогам и сборам»
-            </p>
-          </a>
-        </div>
-        <div class="col-lg-1 d-xxl-flex d-none"></div>
-        <div class="col-xl-4 col-lg-3 d-lg-block d-none">
-
-
-          <div class="search-block w-100">
             <form class="form-group d-flex flex-row align-items-center w-100" action="/search/">
               <div class="floating-label-content w-100">
-                <input class="floating-input" type="text" name="q" value="" placeholder="">
+                <input class="floating-input" id="title-search-input" type="text" name="q" value="" size="40" maxlength="50" autocomplete="off">
                 <label class="floating-label">Поиск</label>
               </div>
               <div class="ms-2">
-                <button class="button-serach" type="submit" value="Поиск"></button>
+                <button name="search" class="button-search" type="submit">
+                </button>
               </div>
             </form>
-          </div>
-        </div>
-        <div class="col-lg-2 w-lg-auto d-lg-block d-none">
-          <div class="d-flex flex-column" bis_skin_checked="1">
-            <a href="tel:8 (017) 269-19-19" class="link-tel-drop">
-              8 (017) 269-19-19
-            </a>
-            <span class="ff-roboto fs-14 color-gray-txt lh-sm">Колл-центр</span>
-          </div>
-        </div>
-        <div class="col-lg-2 w-lg-auto d-flex justify-content-end d-lg-block d-none">
-          <p class="mb-0 fs-14 ff-roboto lh-sm ls-0 color-gray-txt">
-            <span>Пн – Чт: с 8:45 до 18:00</span> <br>
-            <span>Пт: с 8:45 до 16:45</span>
-          </p>
-        </div>
-        <div>
-          <button class="btn-default">Войти</button>
-          <button class="btn-empty">Портал самообслуживания</button>
-        </div>
-      </div>
-    </div>
 
+          </div>
+          <div class="d-flex flex-column justify-content-center">
+            <a href="tel:+ 375 17 269–19–19" class="header-contact color-violet">+ 375 17 269–19–19</a>
+            <p>г. Минск, ул. Скорины, 8, 3 этаж</p>
+          </div>
+          <div class="d-md-block d-none">
+            <p class="mb-0 color-gray-txt ff-roboto fs-14">
+              Пн-Чт: с 8:45 до 18:00 <br>
+              Пт: с 8:45 до 16:45
+            </p>
+          </div>
+
+          <div class="d-lg-flex gap-3 d-none">
+            <a href="https://new.ckta.by/" class="btn-default flex-shrink-0">
+              Войти
+            </a>
+            <a href="https://new.ckta.by/" class="btn-empty flex-shrink-0">
+              Портал самообслуживания
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="w-100 mt-3 d-lg-block d-none">
+      <nav class="header-nav d-flex flex-row justify-content-between">
+        <a href="/o-sisteme/" rel="noopener noreferrer" class="link-header">
+          О системе
+        </a>
+        <a href="http://ckta.by/#section1" rel="noopener noreferrer" class="link-header">
+          Как&nbsp;подключиться
+        </a>
+        <a href="https://info-center.by/documents/dokumenty-skta/" rel="noopener noreferrer" class="link-header">
+          Документы
+        </a>
+        <a href="http://ckta.by/#section2" rel="noopener noreferrer" class="link-header">
+          Тарифы и&nbsp;способы оплаты
+        </a>
+        <a href="/faq/" rel="noopener noreferrer" class="link-header">
+          Вопрос-ответ
+        </a>
+        <a href="/news/" rel="noopener noreferrer" class="link-header">
+          Новости
+        </a>
+        <a href="http://ckta.by/#section3" rel="noopener noreferrer" class="link-header">
+          Контакты
+        </a>
+      </nav>
+    </div>
   </div>
 </header>
