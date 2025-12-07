@@ -7,7 +7,11 @@
 @import "./components/header.scss";
 @import "./components/floating-label.scss";
 
+body {
+  font-family: $ff-roboto;
+  background-color: lightgray;
+}
 .container {
-  max-width: 1540px;
+  max-width: 1580px;
   padding-inline: 20px;
 }
