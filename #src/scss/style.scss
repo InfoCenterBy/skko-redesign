@@ -5,13 +5,37 @@
 @import "./functional/variables.scss";
 @import "./components/buttons.scss";
 @import "./components/header.scss";
+@import "./components/footer.scss";
 @import "./components/floating-label.scss";
 
 body {
   font-family: $ff-roboto;
-  background-color: lightgray;
 }
+
+html {
+  height: auto;
+  scroll-behavior: smooth;
+  width: 100%;
+  // scrollbar-gutter: stable;
+  // overflow: auto;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .container {
   max-width: 1580px;
   padding-inline: 20px;
+}
+
+.main {
+  flex: 1 1 auto;
 }

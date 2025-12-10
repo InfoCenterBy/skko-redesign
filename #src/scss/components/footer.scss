@@ -1,0 +1,41 @@
+.footer {
+  background-color: var(--color-violet);
+  padding: 2.375rem 0 1.875rem 0;
+  margin-top: 6.25rem;
+  @media #{$ui-tablet} {
+    margin-top: 3rem;
+  }
+}
+
+.social-links {
+  &__block {
+    min-width: 2rem;
+    min-height: 2rem;
+    width: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    background-color: var(--color-white);
+    display: grid;
+    place-items: center;
+    transition: $transition-2;
+    @media #{$mouse-device} {
+      &:hover {
+        background-color: var(--color-violet-hover);
+        svg path {
+          fill: var(--color-white);
+        }
+      }
+    }
+  }
+}
+
+.footer-link {
+  color: var(--color-white);
+  font-family: $ff-roboto;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0;
+  transition: $transition-2;
+  @include hover("color", var(--color-yellow-light));
+}

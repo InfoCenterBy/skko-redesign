@@ -4,10 +4,13 @@
 @@include('./components/_head.html',{ "title":"Главная", })
 
 <body>
-  @@include('./components/_header.html')
+  <div class="wrapper">
+    @@include('./components/_header.html')
 
-  <button class="btn btn-primary">123</button>
-  @@include('./components/_scripts.html')
+    <main class="main">123</main>
+    @@include('./components/_footer.html')
+    @@include('./components/_scripts.html')
+  </div>
 </body>
 
 </html>
