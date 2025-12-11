@@ -28,3 +28,13 @@
     }
   }
 }
+
+.link-activity {
+  color: var(--color-dark-violet);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 130%;
+  letter-spacing: 0;
+  transition: $transition-2;
+  @include hover("color", var(--color-black));
+}

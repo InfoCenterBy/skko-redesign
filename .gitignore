@@ -131,4 +131,5 @@ dist
 skko-redesign
 .vscode
 .idea
+.DS_Store
 
