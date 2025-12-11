@@ -30,8 +30,8 @@
 }
 
 .footer-link {
+  display: inline;
   color: var(--color-white);
-  font-family: $ff-roboto;
   font-size: 1rem;
   font-weight: 400;
   line-height: 130%;

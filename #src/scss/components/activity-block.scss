@@ -1,0 +1,116 @@
+.activity-block {
+  border-radius: 1.25rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 130%;
+    letter-spacing: 0;
+  }
+  &__img {
+    display: flex;
+    @media #{$ui-tablet} {
+      display: none;
+    }
+    img {
+      max-width: 18.75rem;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  &-xl {
+    padding: 1.5rem;
+    .activity-block-title {
+      font-size: clamp(1.125rem, 1.075rem + 0.25vw, 1.375rem);
+    }
+  }
+  &-lg,
+  &-sm {
+    padding: 1rem 1.5rem;
+    @media #{$ui-tablet} {
+      padding: 0.75rem 0.75rem;
+    }
+    .activity-block-title {
+      font-size: clamp(1.25rem, 1.2rem + 0.25vw, 1.5rem);
+    }
+  }
+  &-sm {
+    .activity-block__img {
+      img {
+        max-width: 150px;
+      }
+    }
+  }
+  .activity-block-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--color-black);
+    width: 100%;
+    @media #{$mouse-device} {
+      &:hover {
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+      &-violet {
+        &:hover {
+          &::after {
+            color: var(--color-violet);
+          }
+        }
+      }
+      &-yellow {
+        &:hover {
+          &::after {
+            color: var(--color-yellow);
+          }
+        }
+      }
+      &-green {
+        &:hover {
+          &::after {
+            color: var(--color-green);
+          }
+        }
+      }
+      &-taxes-green {
+        &:hover {
+          &::after {
+            color: var(--color-taxes-green);
+          }
+        }
+      }
+    }
+    &::after {
+      font-size: 2rem;
+      content: "\F144";
+      @extend .bootsrtap-icon;
+      font-weight: 500;
+      transition: $transition-2;
+    }
+    &__icon {
+      min-width: 3rem;
+      min-height: 3rem;
+      width: 3rem;
+      height: 3rem;
+      display: grid;
+      place-items: center;
+      padding: 0.25rem;
+      border-radius: 50%;
+    }
+    &__text {
+      color: var(--color-black);
+      font-size: 20px;
+      font-family: "Exo 2";
+      font-weight: 600;
+      text-transform: uppercase;
+      padding-inline: 8px;
+      line-height: 120%;
+      letter-spacing: 0;
+    }
+  }
+}

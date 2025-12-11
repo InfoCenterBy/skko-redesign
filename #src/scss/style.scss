@@ -3,21 +3,22 @@
 @import "./functional/fonts.scss";
 @import "./functional/bootstrap-icons.scss";
 @import "./functional/variables.scss";
+@import "./components/ui.scss";
 @import "./components/buttons.scss";
 @import "./components/header.scss";
 @import "./components/footer.scss";
 @import "./components/floating-label.scss";
+@import "./components/main-banner.scss";
+@import "./components/activity-block.scss";
+@import "./components/links.scss";
+
+@import "./functional/overrides.scss";
 
 body {
   font-family: $ff-roboto;
-}
-
-html {
-  height: auto;
-  scroll-behavior: smooth;
-  width: 100%;
-  // scrollbar-gutter: stable;
-  // overflow: auto;
+  color: var(--color-black);
+  background-color: var(--color-white);
+  line-height: 140%;
 }
 
 html,

@@ -1,0 +1,30 @@
+.link-default {
+  color: var(--color-violet);
+  font-family: $ff-exo;
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 120%;
+  letter-spacing: 0;
+
+  transition: $transition-2;
+  &-arrow {
+    @media #{$mouse-device} {
+      &:hover {
+        &::after {
+          transform: rotate(45deg);
+        }
+      }
+    }
+    &::after {
+      content: "\F144";
+      margin-left: 8px;
+      @extend .bootsrtap-icon;
+      transition: $transition-2;
+    }
+  }
+  @media #{$mouse-device} {
+    &:hover {
+      color: var(--color-violet-hover);
+    }
+  }
+}

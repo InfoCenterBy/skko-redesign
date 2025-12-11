@@ -1,0 +1,308 @@
+.px-12 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.py-12 {
+  padding-block: 0.75rem;
+}
+
+.p-32 {
+  padding-inline: 2rem;
+  padding-block: 2rem;
+}
+
+.p-40 {
+  padding-inline: 2.5rem;
+  padding-block: 2.5rem;
+}
+
+.pt-32 {
+  padding-top: 2rem;
+}
+
+.pb-32 {
+  padding-bottom: 2rem;
+}
+
+.ps-32 {
+  padding-left: 2rem;
+}
+
+.ps-40 {
+  padding-left: 2.5rem;
+}
+
+.pe-40 {
+  padding-right: 2.5rem;
+}
+
+.ps-40-to-16 {
+  padding-left: 2.5rem;
+
+  @media (max-width: 576px) {
+    padding-left: 1rem;
+  }
+}
+
+.pe-40-to-16 {
+  padding-right: 2.5rem;
+
+  @media (max-width: 576px) {
+    padding-right: 1rem;
+  }
+}
+
+.pe-32 {
+  padding-right: 2rem;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+.mt-10 {
+  margin-top: 0.625rem;
+}
+
+.mt-20 {
+  margin-top: 1.25rem;
+}
+
+.mt-24 {
+  margin-top: 1.5rem;
+}
+
+.mt-32 {
+  margin-top: 2rem;
+}
+
+.mt-40 {
+  margin-top: 2.5rem;
+}
+
+.mt-64 {
+  margin-top: clamp(2rem, 1.273rem + 3.64vw, 4rem);
+}
+
+.mt-80 {
+  margin-top: clamp(2.5rem, 1.591rem + 4.55vw, 5rem);
+}
+
+.mt-92 {
+  margin-top: 5.75rem;
+}
+
+.mt-100 {
+  margin-top: clamp(5rem, 4.545rem + 2.27vw, 6.25rem);
+}
+
+.mt-140 {
+  margin-top: clamp(3.75rem, 1.932rem + 9.09vw, 8.75rem);
+}
+
+.gap-12 {
+  gap: 0.75rem;
+}
+
+.gap-20 {
+  gap: 1.25rem;
+}
+
+.p-40 {
+  padding: 40px;
+}
+
+.rounded-100-desktop {
+  border-radius: 100px;
+
+  @media (max-width: 992px) {
+    border-radius: 20px;
+  }
+}
+
+.ff-exo {
+  font-family: $ff-exo;
+}
+
+.ff-roboto {
+  font-family: $ff-roboto;
+}
+
+.bootsrtap-icon {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -0.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.hover-no {
+  pointer-events: none;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .w-lg-auto {
+    width: auto;
+  }
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.border-top-left-20 {
+  border-top-left-radius: 20px;
+}
+
+.border-top-right-20 {
+  border-top-right-radius: 20px;
+}
+
+.border-bottom-left-20 {
+  border-bottom-left-radius: 20px;
+}
+
+.border-bottom-right-20 {
+  border-bottom-right-radius: 20px;
+}
+
+.bg-lg-transparent {
+  @media #{$ui-tablet} {
+    background-color: var(--color-transparent);
+  }
+}
+
+.border-lg-0 {
+  @media #{$ui-tablet} {
+    border-radius: 0;
+  }
+}
+
+.text-xl-nowrap {
+  @media #{$ui-tablet} {
+    white-space: nowrap !important;
+  }
+}
+
+.ws-xl-nowrap {
+  @media #{$ui-bs-xl} {
+    white-space: nowrap;
+  }
+}
+
+.ws-xxl-nowrap {
+  @media #{$ui-bs-xxl} {
+    white-space: nowrap;
+  }
+}
+
+.top-3 {
+  top: 1rem;
+}
+
+.border-b-gray {
+  border-bottom: 1px solid var(--color-gray-stroke);
+}
+
+.margin-inline-n-16 {
+  margin-inline: -16px;
+}
+
+.border-left-desktop {
+  border-left: 1px solid var(--color-gray-stroke);
+
+  @media (max-width: 768px) {
+    border-left: 0;
+  }
+}
+
+.px-xl-100 {
+  @media #{$ui-bs-xl} {
+    padding-right: 6.25rem;
+    padding-left: 6.25rem;
+  }
+}
+
+.px-lg-60 {
+  @media #{$ui-bs-lg} {
+    padding-right: 3.75rem;
+    padding-left: 3.75rem;
+  }
+}
+
+.fs-lg-14 {
+  @media #{$ui-bs-lg} {
+    font-size: 0.875rem;
+  }
+}
+
+.fs-24-to-20 {
+  font-size: 1.25rem;
+
+  @media #{$ui-bs-md} {
+    font-size: 1.5rem;
+  }
+}
+
+.mt-64 {
+  margin-top: 4rem;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .mobile-w-100 {
+    width: 100%;
+  }
+}
+
+.object-fit-contain {
+  object-fit: contain;
+}
+
+.p-12 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.text-transform-none {
+  text-transform: none !important;
+}
+
+.h-90 {
+  height: 90%;
+}
+
+.mt-120 {
+  margin-top: 120px;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 100px;
+  }
+}
+
+.border-20 {
+  border-radius: 20px;
+}
+
+.border-30 {
+  border-radius: 30px;
+}

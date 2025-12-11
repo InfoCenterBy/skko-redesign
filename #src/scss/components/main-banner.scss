@@ -1,0 +1,17 @@
+.main-banner {
+  padding: 48px;
+  background-color: var(--color-gray-base);
+  border-radius: 30px;
+
+  &__text {
+    max-width: 690px;
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  @media (max-width: 768px) {
+    padding: 24px;
+  }
+}
