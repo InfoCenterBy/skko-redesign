@@ -108,9 +108,13 @@
       font-family: "Exo 2";
       font-weight: 600;
       text-transform: uppercase;
-      padding-inline: 8px;
+      padding-right: 8px;
       line-height: 120%;
       letter-spacing: 0;
+
+      @media screen and (max-width: 576px) {
+        font-size: 18px;
+      }
     }
   }
 }

@@ -1,4 +1,5 @@
 @import "./libs/bootstrap.min.scss";
+@import "./libs/swiper.min.scss";
 @import "./functional/normalize.scss";
 @import "./functional/fonts.scss";
 @import "./functional/bootstrap-icons.scss";
@@ -12,6 +13,7 @@
 @import "./components/activity-block.scss";
 @import "./components/links.scss";
 @import "./components/tabs.scss";
+@import "./components/main-slider.scss";
 
 @import "./functional/overrides.scss";
 
@@ -19,7 +21,7 @@ body {
   font-family: $ff-roboto;
   color: var(--color-black);
   background-color: var(--color-white);
-  line-height: 140%;
+  line-height: 1.25;
 }
 
 html,
@@ -35,7 +37,7 @@ body {
 
 .container {
   max-width: 1580px;
-  padding-inline: 20px;
+  padding-inline: 16px;
 }
 
 .main {

@@ -1,0 +1,61 @@
+.slider-banner-sm {
+  .swiper {
+    border-radius: 1.25rem;
+  }
+  .swiper-slide {
+    height: 9.375rem;
+    display: flex;
+    justify-content: center;
+    img {
+      object-fit: contain;
+      width: 100%;
+    }
+  }
+}
+
+.swiper-button-prev-custom::before {
+  content: "\F12F";
+}
+.swiper-button-next-custom::before {
+  content: "\F138";
+}
+.swiper-button-next-custom::before,
+.swiper-button-prev-custom::before {
+  @extend .bootsrtap-icon;
+}
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  border: 1.5px solid var(--color-violet);
+  color: var(--color-violet);
+  border-radius: 6.25rem;
+  background-color: var(--color-white);
+  font-size: 2rem;
+  text-align: center;
+  min-width: 3rem;
+  min-height: 3rem;
+  display: grid;
+  place-items: center;
+  transition: $transition-2;
+  @media #{$mouse-device} {
+    &:not([disabled]):hover {
+      background-color: var(--color-violet-hover);
+      color: var(--color-white);
+      border-color: var(--color-violet-hover);
+    }
+  }
+  @media #{$touch-device} {
+    &:active {
+      background-color: var(--color-violet-hover);
+      color: var(--color-white);
+      border-color: var(--color-violet-hover);
+    }
+  }
+  &:disabled,
+  &.disabled {
+    border-color: var(--color-gray-stroke);
+    color: var(--color-gray-stroke);
+  }
+  @media #{$ui-tablet} {
+    display: none;
+  }
+}

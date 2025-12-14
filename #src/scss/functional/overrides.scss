@@ -17,6 +17,11 @@
   padding-block: 2.5rem;
 }
 
+.p-40-to-16 {
+  padding-inline: 1rem;
+  padding-block: 1rem;
+}
+
 .pt-32 {
   padding-top: 2rem;
 }
@@ -266,7 +271,7 @@
   font-weight: 500;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 576px) {
   .mobile-w-100 {
     width: 100%;
   }
@@ -305,4 +310,8 @@
 
 .border-30 {
   border-radius: 30px;
+}
+
+.hidden {
+  display: none;
 }

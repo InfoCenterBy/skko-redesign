@@ -10,12 +10,12 @@
     <main class="main">
       <div class="container">
         <!-- Main banner -->
-        <section class="row mt-4">
+        <section class="row row-gap-4 mt-4">
           <div class="col-12 col-md-6 col-lg-7 h-100">
             <div class="main-banner">
               <div class="d-flex flex-column gap-3">
                 <div class="main-banner__text">
-                  <p class="ff-exo fw-semibold text-uppercase fs-34 color-violet lh-1">Клиентская поддержка системы контроля кассового оборудования</p>
+                  <p class="main-banner__title">Клиентская поддержка системы контроля кассового оборудования</p>
                   <p>
                     СККО обеспечивает автоматизированный контроль расчетов, проводимых через кассовые аппараты, в режиме реального времени
                   </p>
@@ -97,7 +97,7 @@
         <!-- News -->
         <section class="mt-120">
           <div class="d-flex flex-row justify-content-between align-items-center flex-wrap gap-2">
-            <h2 class="block-title-main">новости</h2>
+            <h2 class="block-title">новости</h2>
             <a href="/" class="link-default link-default-arrow">Все новости</a>
           </div>
           <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 row-gap-4 mt-32">
@@ -147,7 +147,7 @@
         <section class="mt-120">
           <div class="new-on-site">
             <div class="d-flex flex-row justify-content-between align-items-center flex-wrap gap-2">
-              <h2 class="block-title-main">
+              <h2 class="block-title">
                 Новое на портале
               </h2>
               <a href="" class="link-default link-default-arrow">
@@ -211,11 +211,11 @@
         </section>
         <!-- for SKKO users -->
         <section class="mt-120">
-          <h2 class="block-title-main">пользователям СККО</h2>
+          <h2 class="block-title">пользователям СККО</h2>
           <div class="row row-cols-1 row-cols-md-2 row-gap-4 mt-32">
             <div class="col d-flex">
-              <div class="bg-gray-base border-30 p-40">
-                <p class="fs-28 ff-exo fw-semibold text-uppercase mb-0">Подключение и обслуживание</p>
+              <div class="bg-gray-base border-30 p-40-to-16">
+                <p class="block-subtitle mb-0">Подключение и обслуживание</p>
                 <div class="d-flex flex-column gap-3 mt-32">
                   <a href="" class="activity-block activity-block-lg bg-white">
                     <div class="activity-block-title activity-block-title-violet align-items-center">
@@ -262,8 +262,8 @@
               </div>
             </div>
             <div class="col d-flex">
-              <div class="bg-violet-light border-30 p-40">
-                <p class="fs-28 ff-exo fw-semibold text-uppercase mb-0">Операторы и субъекты СККО</p>
+              <div class="bg-violet-light border-30 p-40-to-16">
+                <p class="block-subtitle mb-0">Операторы и субъекты СККО</p>
                 <div class="d-flex flex-column gap-3 mt-32">
                   <a href="" class="activity-block activity-block-lg bg-white">
                     <div class="activity-block-title activity-block-title-violet align-items-center">
@@ -304,8 +304,8 @@
               </div>
             </div>
           </div>
-          <div class="mt-4 bg-gray-base border-30 p-40">
-            <p class="fs-28 ff-exo fw-semibold text-uppercase">Операторы и субъекты СККО</p>
+          <div class="mt-4 bg-gray-base border-30 p-40-to-16">
+            <p class="block-subtitle">Операторы и субъекты СККО</p>
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-gap-4 mt-32">
               <div class="col d-flex">
                 <a href="" class="activity-block activity-block-lg bg-white">
@@ -349,7 +349,7 @@
         </section>
         <!-- Services and payment -->
         <section class="mt-120">
-          <h2 class="block-title-main">Услуги и оплата</h2>
+          <h2 class="block-title">Услуги и оплата</h2>
           <div class="row row-cols-1 row-cols-md-2 row-gap-4 mt-32">
             <div class="col d-flex">
               <div class="d-flex flex-column gap-3">
@@ -407,7 +407,7 @@
               </div>
             </div>
             <div class="col d-flex">
-              <div class="bg-gray-base p-40 border-30 w-100">
+              <div class="bg-gray-base p-40-to-16 border-30 w-100">
                 <ul class="nav nav-pills default-tabs mb-3" id="services-tabs" role="tablist">
                   <li class="nav-item" role="presentation">
                     <button class="active default-tab" id="account-details-tab" data-bs-toggle="pill" data-bs-target="#account-details" type="button" role="tab"
@@ -463,18 +463,16 @@
           </div>
         </section>
         <!-- Contacts -->
-        <section class="mt-120">
-          <h2 class="block-title-main">Контакты</h2>
+        <!-- <section class="mt-120">
+          <h2 class="block-title">Контакты</h2>
           <div class="container mt-32">
-            <!-- @@include('../../html-comp/_script-file.html', {'src-path': link}) -->
-            <!-- <div class="map-cards"></div> -->
             <script src=""></script>
             <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
             <div id="app">
               <div class="row">
                 <div class="col-lg-9 d-flex my-2 order-lg-1 order-2">
                   <div class="d-flex flex-row flex-lg-wrap gap-3 nav-radio overflow-auto flex-nowrap align-items-start" id="mapRegion">
-                    <!-- nav-radio__elem-active -->
+
                     <button class="default-tab" v-if="activeTab == 1">
                       <span>Все</span>
                     </button>
@@ -486,7 +484,7 @@
                         :class="[filteredTerms == item ? 'nav-radio__elem-active' : '']">
                         <span>{{item}}</span>
                       </button>
-                      <!-- -->
+
                     </template>
                   </div>
                 </div>
@@ -558,492 +556,532 @@
                 </table>
               </div>
             </div>
-            <script>
-              const { createApp, ref } = Vue
 
-              createApp({
-                data() {
-                  return {
-                    groups: [
-                      {
-                        name: "Минск",
-                        style: "islands#violetGovernmentIcon",
-                        items: [
-                          {
-                            center: [53.91373, 27.574237],
-                            // name: "Минск, проспект Машерова, 7"
-                            name: "ИМНС по Центральному району",
-                            contacts: {
-                              adress: 'Минск, проспект Машерова, 7',
-                              tel: '+375 (17) 269-19-19',
-                              fax: '+375 (17) 269-19-43',
-                              email: 'support@ca.info-center.by',
-                            },
-                            workTime: 'пн-чт: 8.45-18.00 <br> пт: 8.45-16.45 <br> перерыв: 13.00-14.00 <br> сб-вс: выходной',
-                            status: {
-                              active: true,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: '<strong>Прием осуществляется по предварительной записи</strong>, телефон <a href="tel:+375(17)269-19-19" class="color-dark-violet">+375 17 269 19 19</a> <br>В свободное от предварительной записи время прием ведется посредством системы «Электронная очередь»'
-                          },
-                          {
-                            center: [53.897191, 27.494987],
-                            name: "ИМНС по Фрунзенскому району №2",
-                            contacts: {
-                              adress: 'г. Минск, пр-т Пушкина, д. 11, к. 111',
-                              tel: '+375 (17) 269-19-19',
-                              fax: '+375 (17) 323-25-94',
-                              email: 0
-                            },
-                            workTime: 0,
-                            status: {
-                              active: true,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                        ]
-                      },
-                      {
-                        name: "Минская область",
-                        style: "islands#violetGovernmentIcon",
-                        items: [
-                          {
-                            center: [53.02264, 27.558256],
-                            // name: "Минск, проспект Машерова, 7"
-                            name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                            contacts: {
-                              adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                              tel: '+375(17) 952 49 92',
-                              fax: 0,
-                              email: 0,
-                            },
-                            workTime: 0,
-                            status: {
-                              active: true,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                          {
-                            center: [53.02264, 28.558256],
-                            // name: "Минск, проспекулт Машерова, 7"
-                            name: "г.sdfsdf23609",
-                            contacts: {
-                              adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                              tel: '+375(17) 952 49 92',
-                              fax: 0,
-                              email: 0,
-                            },
-                            workTime: 0,
-                            status: {
-                              active: false,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                        ]
-                      },
-                      {
-                        name: "Брестская область",
-                        style: "islands#violetGovernmentIcon",
-                        items: [
-                          {
-                            center: [53.02264, 27.558256],
-                            // name: "Минск, проспект Машерова, 7"
-                            name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                            contacts: {
-                              adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                              tel: '+375(17) 952 49 92',
-                              fax: 0,
-                              email: 0,
-                            },
-                            workTime: 0,
-                            status: {
-                              active: true,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                          {
-                            center: [53.02264, 28.558256],
-                            // name: "Минск, проспекулт Машерова, 7"
-                            name: "г.sdfsdf23609",
-                            contacts: {
-                              adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                              tel: '+375(17) 952 49 92',
-                              fax: 0,
-                              email: 0,
-                            },
-                            workTime: 0,
-                            status: {
-                              active: false,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                        ]
-                      },
-                      {
-                        name: "Витебская область",
-                        style: "islands#violetGovernmentIcon",
-                        items: [
-                          {
-                            center: [53.02264, 27.558256],
-                            // name: "Минск, проспект Машерова, 7"
-                            name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                            contacts: {
-                              adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                              tel: '+375(17) 952 49 92',
-                              fax: 0,
-                              email: 0,
-                            },
-                            workTime: 0,
-                            status: {
-                              active: true,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                          {
-                            center: [53.02264, 28.558256],
-                            // name: "Минск, проспекулт Машерова, 7"
-                            name: "г.sdfsdf23609",
-                            contacts: {
-                              adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                              tel: '+375(17) 952 49 92',
-                              fax: 0,
-                              email: 0,
-                            },
-                            workTime: 0,
-                            status: {
-                              active: false,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                        ]
-                      },
-                      {
-                        name: "Гомельская область",
-                        style: "islands#violetGovernmentIcon",
-                        items: [
-                          {
-                            center: [53.02264, 27.558256],
-                            // name: "Минск, проспект Машерова, 7"
-                            name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                            contacts: {
-                              adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                              tel: '+375(17) 952 49 92',
-                              fax: 0,
-                              email: 0,
-                            },
-                            workTime: 0,
-                            status: {
-                              active: true,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                          {
-                            center: [53.02264, 28.558256],
-                            // name: "Минск, проспекулт Машерова, 7"
-                            name: "г.sdfsdf23609",
-                            contacts: {
-                              adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                              tel: '+375(17) 952 49 92',
-                              fax: 0,
-                              email: 0,
-                            },
-                            workTime: 0,
-                            status: {
-                              active: false,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                        ]
-                      },
-                      {
-                        name: "Гродненская область",
-                        style: "islands#violetGovernmentIcon",
-                        items: [
-                          {
-                            center: [53.02264, 27.558256],
-                            // name: "Минск, проспект Машерова, 7"
-                            name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                            contacts: {
-                              adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                              tel: '+375(17) 952 49 92',
-                              fax: 0,
-                              email: 0,
-                            },
-                            workTime: 0,
-                            status: {
-                              active: true,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                          {
-                            center: [53.02264, 28.558256],
-                            // name: "Минск, проспекулт Машерова, 7"
-                            name: "г.sdfsdf23609",
-                            contacts: {
-                              adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                              tel: '+375(17) 952 49 92',
-                              fax: 0,
-                              email: 0,
-                            },
-                            workTime: 0,
-                            status: {
-                              active: false,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                        ]
-                      },
-                      {
-                        name: "Могилевская область",
-                        style: "islands#violetGovernmentIcon",
-                        items: [
-                          {
-                            center: [53.02264, 27.558256],
-                            // name: "Минск, проспект Машерова, 7"
-                            name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
-                            contacts: {
-                              adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                              tel: '+375(17) 952 49 92',
-                              fax: 0,
-                              email: 0,
-                            },
-                            workTime: 0,
-                            status: {
-                              active: true,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                          {
-                            center: [53.02264, 28.558256],
-                            // name: "Минск, проспекулт Машерова, 7"
-                            name: "г.sdfsdf23609",
-                            contacts: {
-                              adress: 'г. Слуцк, ул. Лацкова, д. 2',
-                              tel: '+375(17) 952 49 92',
-                              fax: 0,
-                              email: 0,
-                            },
-                            workTime: 0,
-                            status: {
-                              active: false,
-                              text: 'Функционирует согласно режиму работы'
-                            },
-                            comment: 0
-                          },
-                        ]
-                      },
-                    ],
-                    cityList: [],
-                    activeTab: 1,
-                    filteredTableItems: [],
-                    filteredTerms: '',
-                    isLargeScreen: window.innerWidth > 1090
-                  }
-                },
-                computed: {
-                  uniqueCities() {
-                    const citySet = new Set()
-
-                    this.groups.forEach(el => {
-                      if (el.name) {
-                        citySet.add(el.name)
-                      }
-                    });
-
-                    return Array.from(citySet)
-                    // console.log(this.cityList)
-                  },
-
-                },
-                methods: {
-                  init() {
-                    // Создание экземпляра карты.
-                    var myMap = new ymaps.Map('contact_map', {
-                      center: [53.902735, 27.555696],
-                      zoom: 12,
-                      // controls: ['zoomControl', 'typeSelector', 'fullscreenControl', 'routeButtonControl']
-                      controls: ['zoomControl', 'routeButtonControl']
-                    }),
-                      // Контейнер для меню.
-                      menu = $('#app .nav-radio#mapRegion')
-                    menuCards = $('#app .map-cards')
-
-                    for (var i = 0, l = this.groups.length; i < l; i++) {
-                      createMenuGroup(this.groups[i])
-                    }
-
-                    function createMenuGroup(group) {
-                      // Пункт меню.
-                      document.querySelector('#app #mapRegion .nav-radio__elem-all').classList.add('nav-radio__elem-active')
-
-                      var menuItem = $('<div class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"><span>' + group.name + '</span></div>'),
-                        // Коллекция для геообъектов группы.
-                        collection = new ymaps.GeoObjectCollection(null, { preset: group.style }),
-                        // Контейнер для подменю.
-                        submenu = $('<div class="map-cards-submenu"></div>')
-
-                      // Добавляем пункт меню.
-                      menuItem.appendTo(menu)
-
-                      // Добавляем подменю.
-                      submenu.appendTo(menuCards)
-
-                      // Создаем подменю для группы.
-                      for (var j = 0, m = group.items.length; j < m; j++) {
-                        createSubMenu(group.items[j], collection, submenu)
-                      }
-
-                      // При старте: все geoObjects добавляются, submenu показываются.
-                      myMap.geoObjects.add(collection)
-                      submenu.show()
-
-                      // Обработчик клика.
-                      menuItem.on('click', function () {
-                        // Убираем active-класс у всех элементов, скрываем их подменю и удаляем их geoObjects.
-                        $('#mapRegion .nav-radio__elem').removeClass('nav-radio__elem-active')
-                        $('.map-cards-submenu').hide()
-                        myMap.geoObjects.removeAll()
-
-                        // Назначаем active-класс текущему элементу.
-                        $(this).addClass('nav-radio__elem-active')
-
-                        // Добавляем geoObjects и показываем подменю.
-                        myMap.geoObjects.add(collection)
-                        submenu.show()
-                      });
-
-                      $('#app #mapRegion .nav-radio__elem-all').on('click', () => {
-                        $('#mapRegion .nav-radio__elem').removeClass('nav-radio__elem-active')
-                        $('#app .nav-radio__elem-all.nav-radio__elem').addClass('nav-radio__elem-active')
-                        myMap.geoObjects.add(collection)
-                        submenu.show()
-                      })
-
-                    }
-
-                    function createSubMenu(item, collection, submenu) {
-                      // Пункт подменю.
-                      // ${item.workTime }
-                      var submenuItem = $(`
-                  <div class="map-cards-item">
-                            <div>
-                                <strong class="d-block map-cards-item__title">
-                                      ${item.contacts?.adress} (${item.name})
-                                </strong>
-                            </div>
-                            <div class="d-flex flex-column gap-2">
-                                <div class=" d-flex flex-row flex-lg-nowrap flex-wrap align-items-center gap-1 mt-12">
-                                      <strong>Статус</strong>
-                                      <div class="map-cards-item__status ${item.status.active ? "map-cards-item__status-active" : "map-cards-item__status-disabled"}">
-                                          <span>${item.status?.text || "Не указан"}</span>
-                                      </div>
-                                </div>
-                                <div class="row">
-                                      <div class="col-lg-6 d-flex flex-column">
-                                          <strong>Режим работы</strong>
-                                          <p>${item?.workTime || "Не указан"}</p>
-                                      </div>
-                                      <div class="col-lg-6 d-flex flex-column gap-2">
-                                          <strong>Контакты</strong>
-                                          <span>тел: ${item.contacts?.tel || "Не указан"}</span>
-                                          <span>факс: ${item.contacts?.fax || "Не указан"}</span>
-                                          <span>электронная почта: <br> <span class="color-dark-violet">${item.contacts?.email || "Не указана"}</span></span>
-                                      </div>
-                                </div>
-                                <div>
-                                      ${item?.comment || ""}
-                                </div>
-                            </div>
-                      </div>
-                      `),
-                        // Создаем метку.
-                        placemark = new ymaps.Placemark(item.center, { balloonContent: item.name })
-
-                      // Добавляем метку в коллекцию.
-                      collection.add(placemark)
-                      // Добавляем пункт в подменю.
-                      submenuItem
-                        .appendTo(submenu)
-                        // При клике по пункту подменю открываем/закрываем баллун у метки.
-                        .find('div')
-                        .bind('click', function () {
-                          if (!placemark.balloon.isOpen()) {
-                            placemark.balloon.open()
-                          } else {
-                            placemark.balloon.close()
-                          }
-                          return false
-                        });
-                    }
-
-                    // Добавляем меню в тэг BODY.
-                    menu.appendTo($('body #mapRegion'));
-                    menuCards.appendTo($('body #mapCards'));
-                    // Выставляем масштаб карты чтобы были видны все группы.
-                    // myMap.setBounds(myMap.geoObjects.getBounds());
-                  },
-                  changeTab(number) {
-                    this.activeTab = number
-                    this.deleteOldNav()
-                    if (number == 1) {
-                      ymaps.ready(this.init)
-                    }
-                    if (number == 2) {
-                      this.filterTable('')
-                    }
-                  },
-                  deleteOldNav() {
-                    const nameList = document.querySelectorAll('#app #mapRegion .nav-radio__elem:not(:first-child)')
-                    nameList.forEach(element => {
-                      element.remove()
-                    })
-                  },
-                  filterTable(name) {
-                    if (name != '') {
-                      this.filteredTerms = name
-                      // Находим группу с соответствующим именем
-                      const group = this.groups.find(group => group.name === name)
-                      // Если группа найдена, возвращаем её items, иначе пустой массив
-                      return group ? this.filteredTableItems = group.items : this.filteredTableItems = []
-                    } else {
-                      this.filteredTerms = ''
-                      // Если name не указан, возвращаем все items из всех групп
-                      return this.filteredTableItems = this.groups.reduce((acc, group) => acc.concat(group.items), [])
-                    }
-                  },
-                  handleResize() {
-                    this.isLargeScreen = window.innerWidth > 1090
-                  }
-                  // filterTable(name){}
-                },
-                created() {
-                  window.addEventListener('resize', this.handleResize)
-                },
-                mounted() {
-                  ymaps.ready(this.init)
-                }
-              }).mount('#app')
-            </script>
+          </div>
+        </section> -->
+        <!-- Slider -->
+        <section class="mt-120">
+          <div class="d-flex flex-row align-items-center gap-2">
+            <button class="swiper-button-prev-custom"></button>
+            <div class="swiper slider-banner-sm">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide overflow-hidden border-20">
+                  <img src="./img/main-slider/slider-default-img.png" alt="">
+                </div>
+                <div class="swiper-slide overflow-hidden border-20">
+                  <img src="./img/main-slider/slider-padatak.png" alt="">
+                </div>
+                <div class="swiper-slide overflow-hidden border-20">
+                  <img src="./img/main-slider/slider-padatak-2.png" alt="">
+                </div>
+                <div class="swiper-slide overflow-hidden border-20">
+                  <img src="./img/main-slider/slider-taxes.png" alt="">
+                </div>
+                <div class="swiper-slide overflow-hidden border-20">
+                  <img src="./img/main-slider/slider-default-img.png" alt="">
+                </div>
+                <div class="swiper-slide overflow-hidden border-20">
+                  <img src="./img/main-slider/slider-taxi.png" alt="">
+                </div>
+                <div class="swiper-slide overflow-hidden border-20">
+                  <img src="./img/main-slider/slider-taxes.png" alt="">
+                </div>
+                <div class="swiper-slide overflow-hidden border-20">
+                  <img src="./img/main-slider/slider-default-img.png" alt="">
+                </div>
+                <div class="swiper-slide overflow-hidden border-20">
+                  <img src="./img/main-slider/slider-taxi.png" alt="">
+                </div>
+              </div>
+            </div>
+            <button class="swiper-button-next-custom"></button>
           </div>
         </section>
-
       </div>
     </main>
+    <script src="./js/swiper-bundle.min.js"></script>
+
     @@include('./components/_footer.html')
     @@include('./components/_scripts.html')
   </div>
+  <!-- <script>
+    const { createApp, ref } = Vue
+
+    createApp({
+      data() {
+        return {
+          groups: [
+            {
+              name: "Минск",
+              style: "islands#violetGovernmentIcon",
+              items: [
+                {
+                  center: [53.91373, 27.574237],
+                  // name: "Минск, проспект Машерова, 7"
+                  name: "ИМНС по Центральному району",
+                  contacts: {
+                    adress: 'Минск, проспект Машерова, 7',
+                    tel: '+375 (17) 269-19-19',
+                    fax: '+375 (17) 269-19-43',
+                    email: 'support@ca.info-center.by',
+                  },
+                  workTime: 'пн-чт: 8.45-18.00 <br> пт: 8.45-16.45 <br> перерыв: 13.00-14.00 <br> сб-вс: выходной',
+                  status: {
+                    active: true,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: '<strong>Прием осуществляется по предварительной записи</strong>, телефон <a href="tel:+375(17)269-19-19" class="color-dark-violet">+375 17 269 19 19</a> <br>В свободное от предварительной записи время прием ведется посредством системы «Электронная очередь»'
+                },
+                {
+                  center: [53.897191, 27.494987],
+                  name: "ИМНС по Фрунзенскому району №2",
+                  contacts: {
+                    adress: 'г. Минск, пр-т Пушкина, д. 11, к. 111',
+                    tel: '+375 (17) 269-19-19',
+                    fax: '+375 (17) 323-25-94',
+                    email: 0
+                  },
+                  workTime: 0,
+                  status: {
+                    active: true,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+              ]
+            },
+            {
+              name: "Минская область",
+              style: "islands#violetGovernmentIcon",
+              items: [
+                {
+                  center: [53.02264, 27.558256],
+                  // name: "Минск, проспект Машерова, 7"
+                  name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
+                  contacts: {
+                    adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                    tel: '+375(17) 952 49 92',
+                    fax: 0,
+                    email: 0,
+                  },
+                  workTime: 0,
+                  status: {
+                    active: true,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+                {
+                  center: [53.02264, 28.558256],
+                  // name: "Минск, проспекулт Машерова, 7"
+                  name: "г.sdfsdf23609",
+                  contacts: {
+                    adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                    tel: '+375(17) 952 49 92',
+                    fax: 0,
+                    email: 0,
+                  },
+                  workTime: 0,
+                  status: {
+                    active: false,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+              ]
+            },
+            {
+              name: "Брестская область",
+              style: "islands#violetGovernmentIcon",
+              items: [
+                {
+                  center: [53.02264, 27.558256],
+                  // name: "Минск, проспект Машерова, 7"
+                  name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
+                  contacts: {
+                    adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                    tel: '+375(17) 952 49 92',
+                    fax: 0,
+                    email: 0,
+                  },
+                  workTime: 0,
+                  status: {
+                    active: true,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+                {
+                  center: [53.02264, 28.558256],
+                  // name: "Минск, проспекулт Машерова, 7"
+                  name: "г.sdfsdf23609",
+                  contacts: {
+                    adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                    tel: '+375(17) 952 49 92',
+                    fax: 0,
+                    email: 0,
+                  },
+                  workTime: 0,
+                  status: {
+                    active: false,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+              ]
+            },
+            {
+              name: "Витебская область",
+              style: "islands#violetGovernmentIcon",
+              items: [
+                {
+                  center: [53.02264, 27.558256],
+                  // name: "Минск, проспект Машерова, 7"
+                  name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
+                  contacts: {
+                    adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                    tel: '+375(17) 952 49 92',
+                    fax: 0,
+                    email: 0,
+                  },
+                  workTime: 0,
+                  status: {
+                    active: true,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+                {
+                  center: [53.02264, 28.558256],
+                  // name: "Минск, проспекулт Машерова, 7"
+                  name: "г.sdfsdf23609",
+                  contacts: {
+                    adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                    tel: '+375(17) 952 49 92',
+                    fax: 0,
+                    email: 0,
+                  },
+                  workTime: 0,
+                  status: {
+                    active: false,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+              ]
+            },
+            {
+              name: "Гомельская область",
+              style: "islands#violetGovernmentIcon",
+              items: [
+                {
+                  center: [53.02264, 27.558256],
+                  // name: "Минск, проспект Машерова, 7"
+                  name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
+                  contacts: {
+                    adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                    tel: '+375(17) 952 49 92',
+                    fax: 0,
+                    email: 0,
+                  },
+                  workTime: 0,
+                  status: {
+                    active: true,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+                {
+                  center: [53.02264, 28.558256],
+                  // name: "Минск, проспекулт Машерова, 7"
+                  name: "г.sdfsdf23609",
+                  contacts: {
+                    adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                    tel: '+375(17) 952 49 92',
+                    fax: 0,
+                    email: 0,
+                  },
+                  workTime: 0,
+                  status: {
+                    active: false,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+              ]
+            },
+            {
+              name: "Гродненская область",
+              style: "islands#violetGovernmentIcon",
+              items: [
+                {
+                  center: [53.02264, 27.558256],
+                  // name: "Минск, проспект Машерова, 7"
+                  name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
+                  contacts: {
+                    adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                    tel: '+375(17) 952 49 92',
+                    fax: 0,
+                    email: 0,
+                  },
+                  workTime: 0,
+                  status: {
+                    active: true,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+                {
+                  center: [53.02264, 28.558256],
+                  // name: "Минск, проспекулт Машерова, 7"
+                  name: "г.sdfsdf23609",
+                  contacts: {
+                    adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                    tel: '+375(17) 952 49 92',
+                    fax: 0,
+                    email: 0,
+                  },
+                  workTime: 0,
+                  status: {
+                    active: false,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+              ]
+            },
+            {
+              name: "Могилевская область",
+              style: "islands#violetGovernmentIcon",
+              items: [
+                {
+                  center: [53.02264, 27.558256],
+                  // name: "Минск, проспект Машерова, 7"
+                  name: "г. Слуцк, ул. Лацкова, д. 2, 223609",
+                  contacts: {
+                    adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                    tel: '+375(17) 952 49 92',
+                    fax: 0,
+                    email: 0,
+                  },
+                  workTime: 0,
+                  status: {
+                    active: true,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+                {
+                  center: [53.02264, 28.558256],
+                  // name: "Минск, проспекулт Машерова, 7"
+                  name: "г.sdfsdf23609",
+                  contacts: {
+                    adress: 'г. Слуцк, ул. Лацкова, д. 2',
+                    tel: '+375(17) 952 49 92',
+                    fax: 0,
+                    email: 0,
+                  },
+                  workTime: 0,
+                  status: {
+                    active: false,
+                    text: 'Функционирует согласно режиму работы'
+                  },
+                  comment: 0
+                },
+              ]
+            },
+          ],
+          cityList: [],
+          activeTab: 1,
+          filteredTableItems: [],
+          filteredTerms: '',
+          isLargeScreen: window.innerWidth > 1090
+        }
+      },
+      computed: {
+        uniqueCities() {
+          const citySet = new Set()
+
+          this.groups.forEach(el => {
+            if (el.name) {
+              citySet.add(el.name)
+            }
+          });
+
+          return Array.from(citySet)
+          // console.log(this.cityList)
+        },
+
+      },
+      methods: {
+        init() {
+          // Создание экземпляра карты.
+          var myMap = new ymaps.Map('contact_map', {
+            center: [53.902735, 27.555696],
+            zoom: 12,
+            // controls: ['zoomControl', 'typeSelector', 'fullscreenControl', 'routeButtonControl']
+            controls: ['zoomControl', 'routeButtonControl']
+          }),
+            // Контейнер для меню.
+            menu = $('#app .nav-radio#mapRegion')
+          menuCards = $('#app .map-cards')
+
+          for (var i = 0, l = this.groups.length; i < l; i++) {
+            createMenuGroup(this.groups[i])
+          }
+
+          function createMenuGroup(group) {
+            // Пункт меню.
+            document.querySelector('#app #mapRegion .nav-radio__elem-all').classList.add('nav-radio__elem-active')
+
+            var menuItem = $('<div class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"><span>' + group.name + '</span></div>'),
+              // Коллекция для геообъектов группы.
+              collection = new ymaps.GeoObjectCollection(null, { preset: group.style }),
+              // Контейнер для подменю.
+              submenu = $('<div class="map-cards-submenu"></div>')
+
+            // Добавляем пункт меню.
+            menuItem.appendTo(menu)
+
+            // Добавляем подменю.
+            submenu.appendTo(menuCards)
+
+            // Создаем подменю для группы.
+            for (var j = 0, m = group.items.length; j < m; j++) {
+              createSubMenu(group.items[j], collection, submenu)
+            }
+
+            // При старте: все geoObjects добавляются, submenu показываются.
+            myMap.geoObjects.add(collection)
+            submenu.show()
+
+            // Обработчик клика.
+            menuItem.on('click', function () {
+              // Убираем active-класс у всех элементов, скрываем их подменю и удаляем их geoObjects.
+              $('#mapRegion .nav-radio__elem').removeClass('nav-radio__elem-active')
+              $('.map-cards-submenu').hide()
+              myMap.geoObjects.removeAll()
+
+              // Назначаем active-класс текущему элементу.
+              $(this).addClass('nav-radio__elem-active')
+
+              // Добавляем geoObjects и показываем подменю.
+              myMap.geoObjects.add(collection)
+              submenu.show()
+            });
+
+            $('#app #mapRegion .nav-radio__elem-all').on('click', () => {
+              $('#mapRegion .nav-radio__elem').removeClass('nav-radio__elem-active')
+              $('#app .nav-radio__elem-all.nav-radio__elem').addClass('nav-radio__elem-active')
+              myMap.geoObjects.add(collection)
+              submenu.show()
+            })
+
+          }
+
+          function createSubMenu(item, collection, submenu) {
+            // Пункт подменю.
+            // ${item.workTime }
+            var submenuItem = $(`
+                    <div class="map-cards-item">
+                              <div>
+                                  <strong class="d-block map-cards-item__title">
+                                        ${item.contacts?.adress} (${item.name})
+                                  </strong>
+                              </div>
+                              <div class="d-flex flex-column gap-2">
+                                  <div class=" d-flex flex-row flex-lg-nowrap flex-wrap align-items-center gap-1 mt-12">
+                                        <strong>Статус</strong>
+                                        <div class="map-cards-item__status ${item.status.active ? "map-cards-item__status-active" : "map-cards-item__status-disabled"}">
+                                            <span>${item.status?.text || "Не указан"}</span>
+                                        </div>
+                                  </div>
+                                  <div class="row">
+                                        <div class="col-lg-6 d-flex flex-column">
+                                            <strong>Режим работы</strong>
+                                            <p>${item?.workTime || "Не указан"}</p>
+                                        </div>
+                                        <div class="col-lg-6 d-flex flex-column gap-2">
+                                            <strong>Контакты</strong>
+                                            <span>тел: ${item.contacts?.tel || "Не указан"}</span>
+                                            <span>факс: ${item.contacts?.fax || "Не указан"}</span>
+                                            <span>электронная почта: <br> <span class="color-dark-violet">${item.contacts?.email || "Не указана"}</span></span>
+                                        </div>
+                                  </div>
+                                  <div>
+                                        ${item?.comment || ""}
+                                  </div>
+                              </div>
+                        </div>
+                        `),
+              // Создаем метку.
+              placemark = new ymaps.Placemark(item.center, { balloonContent: item.name })
+
+            // Добавляем метку в коллекцию.
+            collection.add(placemark)
+            // Добавляем пункт в подменю.
+            submenuItem
+              .appendTo(submenu)
+              // При клике по пункту подменю открываем/закрываем баллун у метки.
+              .find('div')
+              .bind('click', function () {
+                if (!placemark.balloon.isOpen()) {
+                  placemark.balloon.open()
+                } else {
+                  placemark.balloon.close()
+                }
+                return false
+              });
+          }
+
+          // Добавляем меню в тэг BODY.
+          menu.appendTo($('body #mapRegion'));
+          menuCards.appendTo($('body #mapCards'));
+          // Выставляем масштаб карты чтобы были видны все группы.
+          // myMap.setBounds(myMap.geoObjects.getBounds());
+        },
+        changeTab(number) {
+          this.activeTab = number
+          this.deleteOldNav()
+          if (number == 1) {
+            ymaps.ready(this.init)
+          }
+          if (number == 2) {
+            this.filterTable('')
+          }
+        },
+        deleteOldNav() {
+          const nameList = document.querySelectorAll('#app #mapRegion .nav-radio__elem:not(:first-child)')
+          nameList.forEach(element => {
+            element.remove()
+          })
+        },
+        filterTable(name) {
+          if (name != '') {
+            this.filteredTerms = name
+            // Находим группу с соответствующим именем
+            const group = this.groups.find(group => group.name === name)
+            // Если группа найдена, возвращаем её items, иначе пустой массив
+            return group ? this.filteredTableItems = group.items : this.filteredTableItems = []
+          } else {
+            this.filteredTerms = ''
+            // Если name не указан, возвращаем все items из всех групп
+            return this.filteredTableItems = this.groups.reduce((acc, group) => acc.concat(group.items), [])
+          }
+        },
+        handleResize() {
+          this.isLargeScreen = window.innerWidth > 1090
+        }
+        // filterTable(name){}
+      },
+      created() {
+        window.addEventListener('resize', this.handleResize)
+      },
+      mounted() {
+        ymaps.ready(this.init)
+      }
+    }).mount('#app')
+  </script> -->
 </body>
 
 </html>

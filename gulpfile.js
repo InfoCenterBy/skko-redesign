@@ -16,7 +16,7 @@ let path = {
   src: {
     html: [source_folder + "/**/*.html"],
     css: [source_folder + "/scss/style.scss"],
-    js: [source_folder + "/js/script.js"],
+    js: [source_folder + "/js/script.js", source_folder + "/js/libs/swiper-bundle.min.js"],
     img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
     fonts: [source_folder + "/fonts/*.ttf", source_folder + "/fonts/*.woff", source_folder + "/fonts/*.woff2"],
     audio: source_folder + "/audio/*.mp3",

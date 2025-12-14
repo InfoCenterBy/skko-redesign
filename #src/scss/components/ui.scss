@@ -1,10 +1,25 @@
-.block-title-main {
+.block-title {
+  font-family: $ff-exo;
   color: var(--color-black);
-  font-size: clamp(1.5rem, 1.2727rem + 1.1364vw, 2.125rem);
-  font-weight: 500;
+  font-size: 28px;
+  font-weight: 600;
   line-height: 130%;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+
+.block-subtitle {
+  font-family: $ff-exo;
+  color: var(--color-black);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0;
+  text-transform: uppercase;
+
+  @media screen and (max-width: 576px) {
+    font-size: 24px;
+  }
 }
 
 .news-card {
