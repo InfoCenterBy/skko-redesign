@@ -13,7 +13,7 @@
 
       <div class="search-block d-lg-block d-none">
 
-        <form class="form-group d-flex flex-row align-items-center w-100" action="/search/">
+        <form class="form-group d-flex flex-row align-items-center w-100" action="">
           <div class="floating-label-content w-100">
             <input class="floating-input" id="title-search-input" type="text" name="q" maxlength="50" size="30" autocomplete="off">
             <label class="floating-label">Поиск</label>
@@ -46,12 +46,37 @@
       </div>
       <div class="mobile-header__content d-flex align-items-center gap-4">
         <form class="mobile-header__search-body w-100" action="">
-          <input class="mobile-header__search-input input" type="text" placeholder="Поиск">
-          <button type="submit"><i class="bi bi-search"></i></button>
+          <div class="search-block w-100">
+            <form class="form-group d-flex flex-row align-items-center w-100" action="/search/index.php">
+              <div class="floating-label-content w-100">
+                <input class="floating-input" type="text" name="q" value="" placeholder="">
+                <label class="floating-label">Поиск</label>
+              </div>
+              <div class="ms-2">
+                <button class="button-search" type="submit" value="Поиск"></button>
+              </div>
+            </form>
+          </div>
         </form>
 
         <div class="mobile-header__search-btn">
-          <i class="bi bi-search"></i>
+          <i class="bi bi-search fs-24"></i>
+        </div>
+        <div class="dropdown d-flex d-lg-none">
+          <button class="border-0 bg-white" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+            <i class="bi bi-phone fs-24"></i>
+          </button>
+          <div class="dropdown-menu px-12 show" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 32px, 0px);"
+            data-popper-placement="bottom-end">
+            <div class="d-flex flex-column">
+              <div class="d-flex flex-column">
+                <a href="tel:+375172691919" class="link-activity text-nowrap">
+                  + 375 17 269–19–19
+                </a>
+                <span>Колл-центр</span>
+              </div>
+            </div>
+          </div>
         </div>
         <button class="mobile-header__menu">
           <span class="menu-bar"></span>

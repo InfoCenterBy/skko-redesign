@@ -18,8 +18,13 @@
 }
 
 .p-40-to-16 {
-  padding-inline: 1rem;
-  padding-block: 1rem;
+  padding-inline: 2.5rem;
+  padding-block: 2.5rem;
+
+  @media screen and (max-width: 576px) {
+    padding-inline: 1rem;
+    padding-block: 1rem;
+  }
 }
 
 .pt-32 {

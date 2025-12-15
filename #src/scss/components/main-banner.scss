@@ -2,6 +2,7 @@
   padding: 48px;
   background-color: var(--color-gray-base);
   border-radius: 30px;
+  width: 100%;
 
   &__text {
     max-width: 690px;
@@ -22,6 +23,7 @@
 
   &__img {
     width: 100%;
+    flex-shrink: 1;
   }
 
   @media (max-width: 768px) {
