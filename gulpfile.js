@@ -16,9 +16,19 @@ let path = {
   src: {
     html: [source_folder + "/**/*.html"],
     css: [source_folder + "/scss/style.scss"],
-    js: [source_folder + "/js/script.js", source_folder + "/js/libs/swiper-bundle.min.js"],
+    js: [
+      source_folder + "/js/script.js",
+      source_folder + "/js/libs/swiper-bundle.min.js",
+      source_folder + "/js/libs/vue.js",
+      source_folder + "/js/swiper-main-page.js",
+      source_folder + "/js/search-inputs.js",
+    ],
     img: source_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
-    fonts: [source_folder + "/fonts/*.ttf", source_folder + "/fonts/*.woff", source_folder + "/fonts/*.woff2"],
+    fonts: [
+      source_folder + "/fonts/*.ttf",
+      source_folder + "/fonts/*.woff",
+      source_folder + "/fonts/*.woff2",
+    ],
     audio: source_folder + "/audio/*.mp3",
   },
   watch: {
@@ -69,7 +79,10 @@ function browserSync(done) {
 }
 
 function html() {
-  return src(path.src.html).pipe(fileinclude()).pipe(dest(path.build.html)).pipe(browsersync.stream());
+  return src(path.src.html)
+    .pipe(fileinclude())
+    .pipe(dest(path.build.html))
+    .pipe(browsersync.stream());
 }
 
 function css() {
@@ -136,7 +149,9 @@ function images() {
 }
 
 function audio() {
-  return src(path.src.audio).pipe(dest(path.build.audio)).pipe(browsersync.stream());
+  return src(path.src.audio)
+    .pipe(dest(path.build.audio))
+    .pipe(browsersync.stream());
 }
 
 function fonts() {
@@ -194,7 +209,10 @@ function deployTask(done) {
   try {
     pkg = JSON.parse(fs.readFileSync("package.json", "utf8")) || {};
   } catch (e) {
-    console.warn("Не удалось прочитать package.json, используем имя папки проекта:", e.message);
+    console.warn(
+      "Не удалось прочитать package.json, используем имя папки проекта:",
+      e.message
+    );
   }
   const baseName = (pkg && (pkg.description || pkg.name)) || project_folder;
   const targetRepoName = baseName + "-demo";
@@ -202,7 +220,9 @@ function deployTask(done) {
   // Определяем владельца GitHub из origin и сохраняем протокол (ssh/https)
   let originUrl = "";
   try {
-    originUrl = execSync("git config --get remote.origin.url", { encoding: "utf8" }).trim();
+    originUrl = execSync("git config --get remote.origin.url", {
+      encoding: "utf8",
+    }).trim();
   } catch (e) {
     console.warn("Не удалось получить origin url из git:", e.message);
   }
@@ -232,7 +252,10 @@ function deployTask(done) {
       if (err) {
         console.error("Deploy failed:", err);
       } else {
-        console.log("Deploy successful! Ветка gh-pages, репозиторий:", targetRepoUrl || "(текущий)");
+        console.log(
+          "Deploy successful! Ветка gh-pages, репозиторий:",
+          targetRepoUrl || "(текущий)"
+        );
       }
       done(err);
     }
@@ -278,7 +301,18 @@ function loremGenerate() {
       .pipe(
         cheerio({
           run: function ($) {
-            const excluded = new Set(["script", "style", "head", "html", "body", "meta", "link", "title", "svg", "noscript"]);
+            const excluded = new Set([
+              "script",
+              "style",
+              "head",
+              "html",
+              "body",
+              "meta",
+              "link",
+              "title",
+              "svg",
+              "noscript",
+            ]);
             $("*").each(function () {
               const el = this;
               if (excluded.has(el.tagName && el.tagName.toLowerCase())) {
@@ -296,7 +330,8 @@ function loremGenerate() {
                     const leading = m ? m[1] : "";
                     const core = m ? m[2] : original;
                     const trailing = m ? m[3] : "";
-                    this.data = leading + generateLoremByLength(core.length) + trailing;
+                    this.data =
+                      leading + generateLoremByLength(core.length) + trailing;
                   }
                 });
             });
@@ -309,8 +344,15 @@ function loremGenerate() {
   );
 }
 
-let build = gulp.series(clean, gulp.parallel(js, css, html, images, fonts, audio));
-let lorem = gulp.series(build, loremGenerate, gulp.parallel(watchFilesLorem, browserSync));
+let build = gulp.series(
+  clean,
+  gulp.parallel(js, css, html, images, fonts, audio)
+);
+let lorem = gulp.series(
+  build,
+  loremGenerate,
+  gulp.parallel(watchFilesLorem, browserSync)
+);
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.fonts = fonts;

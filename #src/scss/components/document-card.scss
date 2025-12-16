@@ -1,0 +1,61 @@
+.document-card {
+  background-color: var(--color-gray-base);
+  border-radius: 15px;
+  padding: 1rem;
+  width: 100%;
+  max-width: 1000px;
+  @media #{$ui-bs-lg} {
+    padding: 1rem 1.5rem;
+  }
+  @media #{$mouse-device} {
+    &:hover {
+      .document-card__text {
+        color: var(--color-dark-violet);
+      }
+    }
+  }
+  @media #{$touch-device} {
+    &:active {
+      .document-card__text {
+        color: var(--color-dark-violet);
+      }
+    }
+  }
+  &__icon {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+    color: var(--color-dark-violet);
+    max-height: 40px;
+    max-width: 40px;
+    svg {
+      path {
+        fill: var(--color-dark-violet);
+      }
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 130%;
+    color: var(--color-black);
+  }
+
+  &__foter {
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 130%;
+    padding-left: 2.5rem;
+  }
+
+  &__type {
+    border-radius: 6.25rem;
+    padding: 0.25rem 0.75rem;
+    color: var(--color-dark-violet);
+    border: 1px solid var(--color-dark-violet);
+  }
+
+  &__date {
+    color: var(--color-gray-txt);
+  }
+}

@@ -3,10 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileNav = document.querySelector(".mobile-header__nav");
   const mobileSearch = document.querySelector(".mobile-header__search-body");
   const mobileSearchBtn = document.querySelector(".mobile-header__search-btn");
-  const mobileSearchCloseBtn = document.querySelector(".mobile-header__search-close");
+  const mobileSearchCloseBtn = document.querySelector(
+    ".mobile-header__search-close"
+  );
   const mobileSearchContent = document.querySelector(".mobile-header__content");
   const mobileLogo = document.querySelector(".header-logo");
-  const mobileTitle = document.querySelector(".mobile-header__title");
+  const mobileTel = document.querySelector(".mobile-header__tel");
   const body = document.body;
 
   if (menuToggle) {
@@ -30,8 +32,8 @@ document.addEventListener("DOMContentLoaded", () => {
     mobileSearchBtn.addEventListener("click", function () {
       mobileSearch.classList.add("open");
       mobileLogo.classList.add("hidden");
+      mobileTel.classList.add("hidden");
       menuToggle.classList.add("hidden");
-      mobileTitle.classList.add("hidden");
       mobileSearchBtn.classList.add("hidden");
       mobileSearchCloseBtn.classList.remove("hidden");
       mobileSearchContent.classList.add("w-100");
@@ -43,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileSearch.classList.remove("open");
       mobileLogo.classList.remove("hidden");
       menuToggle.classList.remove("hidden");
-      mobileTitle.classList.remove("hidden");
+      mobileTel.classList.remove("hidden");
       mobileSearchBtn.classList.remove("hidden");
       mobileSearchCloseBtn.classList.add("hidden");
       mobileSearchContent.classList.remove("w-100");

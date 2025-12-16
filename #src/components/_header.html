@@ -1,6 +1,6 @@
 <header class="header">
   <div class="container">
-    <div class="d-flex gap-3 align-items-center justify-content-between py-3">
+    <div class="d-flex gap-2 align-items-center justify-content-between py-3">
       <div class="header-logo">
         <a class="d-flex flex-row align-items-center" href="/">
           <img src="./img/icons/header-logo.png" alt="" width="56" height="56">
@@ -10,12 +10,10 @@
         </a>
       </div>
 
-
       <div class="search-block d-lg-block d-none">
-
         <form class="form-group d-flex flex-row align-items-center w-100" action="">
           <div class="floating-label-content w-100">
-            <input class="floating-input" id="title-search-input" type="text" name="q" maxlength="50" size="30" autocomplete="off">
+            <input class="floating-input" id="title-search-input" type="text" name="q" maxlength="50" size="30" autocomplete="off" placeholder="">
             <label class="floating-label">Поиск</label>
           </div>
           <div class="ms-2">
@@ -23,13 +21,14 @@
             </button>
           </div>
         </form>
-
       </div>
-      <div class="d-none d-md-flex flex-column justify-content-center">
+
+      <div class="header-address flex-column justify-content-center">
         <a href="tel:+ 375 17 269–19–19" class="header-contact color-violet">+ 375 17 269–19–19</a>
         <p class="mb-0">г. Минск, ул. Скорины, 8, 3 этаж</p>
       </div>
-      <div class="d-md-block d-none">
+
+      <div class="header-worktime">
         <p class="mb-0 color-gray-txt ff-roboto fs-14">
           Пн-Чт: с 8:45 до 18:00 <br>
           Пт: с 8:45 до 16:45
@@ -37,17 +36,18 @@
       </div>
 
       <div class="d-lg-flex gap-3 d-none">
-        <a href="https://new.ckta.by/" class="btn-default flex-shrink-0">
+        <a href="#" class="btn-default flex-shrink-0">
           Войти
         </a>
-        <a href="https://new.ckta.by/" class="btn-empty flex-shrink-0">
+        <a href="#" class="btn-empty flex-shrink-0">
           Портал самообслуживания
         </a>
       </div>
-      <div class="mobile-header__content d-flex align-items-center gap-4">
-        <form class="mobile-header__search-body w-100" action="">
-          <div class="search-block w-100">
-            <form class="form-group d-flex flex-row align-items-center w-100" action="/search/index.php">
+
+      <div class="mobile-header__content align-items-center gap-3">
+        <div class="mobile-header__search-body hidden w-100">
+          <div class="search-block d-flex flex-row align-items-center w-100">
+            <form class="form-group d-flex w-100" action="/search/index.php">
               <div class="floating-label-content w-100">
                 <input class="floating-input" type="text" name="q" value="" placeholder="">
                 <label class="floating-label">Поиск</label>
@@ -57,17 +57,16 @@
               </div>
             </form>
           </div>
-        </form>
+        </div>
 
         <div class="mobile-header__search-btn">
           <i class="bi bi-search fs-24"></i>
         </div>
-        <div class="dropdown d-flex d-lg-none">
+        <div class="mobile-header__tel dropdown">
           <button class="border-0 bg-white" type="button" data-bs-toggle="dropdown" aria-expanded="true">
             <i class="bi bi-phone fs-24"></i>
           </button>
-          <div class="dropdown-menu px-12 show" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 32px, 0px);"
-            data-popper-placement="bottom-end">
+          <div class="dropdown-menu px-12" data-popper-placement="bottom-end">
             <div class="d-flex flex-column">
               <div class="d-flex flex-column">
                 <a href="tel:+375172691919" class="link-activity text-nowrap">
@@ -87,26 +86,54 @@
           <i class="bi bi-x"></i>
         </button>
       </div>
-
     </div>
+    <div class="mobile-header__nav">
+      <ul class="d-flex flex-column gap-4 list-unstyled">
+        <li><a class="text-uppercase color-white ff-exo fs-20" href="news.html">Новости</a></li>
+        <li><a class="text-uppercase color-white ff-exo fs-20" href="#payemnt">Услуги и оплата</a></li>
+        <li><a class="text-uppercase color-white ff-exo fs-20" href="#skko-users">Пользователям СККО</a></li>
+        <li><a class="text-uppercase color-white ff-exo fs-20" href="#">Документы</a></li>
+        <li><a class="text-uppercase color-white ff-exo fs-20" href="#">База знаний</a></li>
+        <li><a class="text-uppercase color-white ff-exo fs-20" href="#contacts">Контакты</a></li>
+      </ul>
+      <div class="d-flex flex-wrap gap-3 mt-40">
+        <a href="#" class="btn-default__white flex-shrink-0">
+          Войти
+        </a>
+        <a href="#" class="btn-empty__white flex-shrink-0">
+          Портал самообслуживания
+        </a>
+      </div>
+
+      <div class="d-flex flex-column justify-content-center mt-40">
+        <p class="mb-0 color-white">г. Минск, ул. Скорины, 8, 3 этаж</p>
+        <p class="mt-2 mb-0 color-white fs-14">
+          Пн-Чт: с 8:45 до 18:00
+        </p>
+        <p class="mt-2 mb-0 color-white fs-14">
+          Пт: с 8:45 до 16:45
+        </p>
+      </div>
+    </div>
+
     <div class="w-100 d-lg-block d-none">
       <nav class="header-nav">
-        <a href="" rel="noopener noreferrer" class="link-header">
+        <a href="news.html" rel="noopener noreferrer" class="link-header">
           Новости
         </a>
-        <a href="http://ckta.by/#section1" rel="noopener noreferrer" class="link-header">
+        <a href="#payment" rel="noopener noreferrer" class="link-header">
           Услуги и оплата
         </a>
-        <a href="https://info-center.by/documents/dokumenty-skta/" rel="noopener noreferrer" class="link-header">
+        <a href="#skko-users" rel="noopener noreferrer" class="link-header">
           Пользователям СККО
         </a>
-        <a href="http://ckta.by/#section2" rel="noopener noreferrer" class="link-header">
+        <a href="#" rel="noopener noreferrer" class="link-header">
           Документы
         </a>
-        <a href="/faq/" rel="noopener noreferrer" class="link-header">
+        <a href="#" rel="noopener noreferrer" class="link-header">
           База знаний
         </a>
-        <a href="http://ckta.by/#section3" rel="noopener noreferrer" class="link-header">
+        <a href="#contacts" rel="noopener noreferrer" class="link-header">
           Контакты
         </a>
       </nav>

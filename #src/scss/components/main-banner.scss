@@ -22,11 +22,18 @@
   }
 
   &__img {
-    width: 100%;
-    flex-shrink: 1;
+    max-width: 100%;
   }
 
   @media (max-width: 768px) {
     padding: 16px;
   }
+}
+
+.main-banner__img:first-child {
+  max-height: 215px;
+}
+
+.main-banner__img:nth-child(2) {
+  max-height: 165px;
 }

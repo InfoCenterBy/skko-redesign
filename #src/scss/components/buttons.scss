@@ -30,7 +30,9 @@ button {
   }
 }
 .btn-default,
+.btn-default__white,
 .btn-empty,
+.btn-empty__white,
 .btn-deny,
 .btn-round {
   @extend .btn-base-style;
@@ -67,36 +69,7 @@ button {
     content: "\F282";
   }
 }
-.header {
-  .btn-collapse-more,
-  .btn-collapse-more-hidden {
-    color: var(--color-gray-txt);
-    font-family: $ff-roboto;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 130%;
-    letter-spacing: 0;
-    user-select: none;
-    transition: all 0.3s ease-in;
-    @include hover("color", var(--color-violet));
-  }
-}
-.btn-collapse-more-hidden {
-  display: block;
-  &.collapsed {
-    display: none;
-  }
-  &::after {
-    @extend .bootsrtap-icon;
-    content: "\F286";
-  }
-}
-.collapsed-more-btn-flex {
-  display: none;
-  &.collapsed {
-    display: flex;
-  }
-}
+
 .btn-default {
   color: var(--color-white);
   background-color: var(--color-violet);
@@ -115,9 +88,50 @@ button {
     cursor: not-allowed;
   }
 }
+
+.btn-default__white {
+  color: var(--color-violet);
+  background-color: var(--color-white);
+  border: 1.5px solid transparent;
+  width: fit-content;
+  &:not([disabled], .disabled) {
+    @include hover("background-color", var(--color-violet-hover));
+  }
+  &:focus,
+  &:active {
+    background-color: var(--color-dark-violet);
+  }
+  &:disabled,
+  &.disabled {
+    background-color: var(--color-gray-stroke);
+    cursor: not-allowed;
+  }
+}
+
 .btn-empty {
   border: 1px solid var(--color-violet);
   color: var(--color-violet);
+  background-color: transparent;
+  &:not([disabled], .disabled) {
+    @include hover("background-color", var(--color-violet-hover));
+    @include hover("border-color", var(--color-violet-hover));
+    @include hover("color", var(--color-white));
+  }
+  &:focus,
+  &:active {
+    border-color: var(--color-dark-violet);
+  }
+  &:disabled,
+  &.disabled {
+    color: var(--color-gray-stroke);
+    border-color: var(--color-gray-stroke);
+    cursor: not-allowed;
+  }
+}
+
+.btn-empty__white {
+  border: 1px solid var(--color-white);
+  color: var(--color-white);
   background-color: transparent;
   &:not([disabled], .disabled) {
     @include hover("background-color", var(--color-violet-hover));

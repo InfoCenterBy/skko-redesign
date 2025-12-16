@@ -38,3 +38,30 @@
   transition: $transition-2;
   @include hover("color", var(--color-black));
 }
+
+.link-black {
+  color: var(--color-black);
+  line-height: 130%;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  transition: $transition-2;
+  @include hover("color", var(--color-dark-violet));
+}
+
+.arrow-link-back {
+  color: var(--color-violet);
+  font-family: $ff-exo;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0;
+  &::before {
+    @extend .bootsrtap-icon;
+    content: "\F12F";
+    font-size: 15px;
+    margin-right: 4px;
+    transition: $transition-2;
+  }
+  @include hover("color", var(--color-violet-hover));
+}

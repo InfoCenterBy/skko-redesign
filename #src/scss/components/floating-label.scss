@@ -1,6 +1,6 @@
 .floating-label-content {
   position: relative;
-  z-index: 2;
+  z-index: 1;
   input[type="date"] {
     display: block;
     -webkit-appearance: none;
@@ -13,7 +13,7 @@
   letter-spacing: 0%;
   color: var(--color-gray-txt);
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   pointer-events: none;
   left: 16px;
   top: 13px;
@@ -32,18 +32,10 @@
   color: var(--color-black);
 }
 
-.floating-input:not(:placeholder-shown) ~ .floating-label.floating-label-violet {
+.floating-input:not(:placeholder-shown)
+  ~ .floating-label.floating-label-violet {
   background-color: var(--color-violet-light);
   color: var(--color-black);
-}
-
-header.header {
-  .floating-label-content {
-    z-index: 1057;
-  }
-  .floating-label {
-    z-index: 1057;
-  }
 }
 
 .floating-input {

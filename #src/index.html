@@ -11,7 +11,7 @@
       <div class="container">
         <!-- Main banner -->
         <section class="row row-gap-4 mt-4">
-          <div class="col-12 col-md-6 col-lg-7 d-flex">
+          <div class="col-12 col-lg-7 d-flex">
             <div class="main-banner">
               <div class="d-flex flex-column gap-3">
                 <div class="main-banner__text">
@@ -28,15 +28,15 @@
                     Портал самообслуживания
                   </a>
                 </div>
-                <div class="d-flex gap-3 align-items-center justify-content-between mt-2">
-                  <img class="main-banner__img" src="./img/main-banner/banner-img-1.png" alt="" style="max-width: 437px;">
-                  <img class="main-banner__img d-none d-lg-flex" src="./img/main-banner/banner-img-2.png" alt="" style="max-width: 202px; max-height: 161px;">
+                <div class="d-flex gap-2 align-items-center justify-content-between me-3">
+                  <img class="main-banner__img" src="./img/main-banner/banner-img-1.png" alt="">
+                  <img class="main-banner__img d-none d-md-flex d-lg-none d-xxl-flex" src="./img/main-banner/banner-img-2.png" alt="">
                 </div>
               </div>
 
             </div>
           </div>
-          <div class="col-12 col-md-6 col-lg-5 d-flex">
+          <div class="col-12 col-lg-5 d-flex">
             <div class="d-flex flex-column gap-3">
               <a href="" class="activity-block activity-block-lg bg-gray-base">
                 <div class="activity-block-title activity-block-title-violet align-items-center">
@@ -150,7 +150,7 @@
               <h2 class="block-title">
                 Новое на портале
               </h2>
-              <a href="" class="link-default link-default-arrow">
+              <a href="new-on-site-detail.html" class="link-default link-default-arrow">
                 Подробнее
               </a>
             </div>
@@ -210,9 +210,9 @@
           </div>
         </section>
         <!-- for SKKO users -->
-        <section class="mt-120">
+        <section id="skko-users" class="mt-120">
           <h2 class="block-title">пользователям СККО</h2>
-          <div class="row row-cols-1 row-cols-md-2 row-gap-4 mt-32">
+          <div class="row row-cols-1 row-cols-lg-2 row-gap-4 mt-32">
             <div class="col d-flex">
               <div class="bg-gray-base border-30 p-40-to-16">
                 <p class="block-subtitle mb-0">Подключение и обслуживание</p>
@@ -306,7 +306,7 @@
           </div>
           <div class="mt-4 bg-gray-base border-30 p-40-to-16">
             <p class="block-subtitle">Операторы и субъекты СККО</p>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-gap-4 mt-32">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 row-gap-4 mt-32">
               <div class="col d-flex">
                 <a href="" class="activity-block activity-block-lg bg-white">
                   <div class="activity-block-title activity-block-title-violet align-items-center">
@@ -348,9 +348,9 @@
 
         </section>
         <!-- Services and payment -->
-        <section class="mt-120">
+        <section id="payment" class="mt-120">
           <h2 class="block-title">Услуги и оплата</h2>
-          <div class="row row-cols-1 row-cols-md-2 row-gap-4 mt-32">
+          <div class="row row-cols-1 row-cols-lg-2 row-gap-4 mt-32">
             <div class="col d-flex">
               <div class="d-flex flex-column gap-3">
                 <a href="" class="activity-block activity-block-lg bg-gray-base">
@@ -463,11 +463,10 @@
           </div>
         </section>
         <!-- Contacts -->
-        <!-- <section class="mt-120">
+        <section id="contacts" class="mt-120">
           <h2 class="block-title">Контакты</h2>
           <div class="container mt-32">
-            <script src=""></script>
-            <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+            <script src="./js/vue.js"></script>
             <div id="app">
               <div class="row">
                 <div class="col-lg-9 d-flex my-2 order-lg-1 order-2">
@@ -480,8 +479,8 @@
                       <button class="default-tab" @click="filterTable('')" :class="[filteredTerms == '' ? 'nav-radio__elem-active' : '']">
                         <span>Все</span>
                       </button>
-                      <button v-for="item in uniqueCities" class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty" @click="filterTable(item)"
-                        :class="[filteredTerms == item ? 'nav-radio__elem-active' : '']">
+                      <button v-for="item in uniqueCities" class="default-tab nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"
+                        @click="filterTable(item)" :class="[filteredTerms == item ? 'nav-radio__elem-active' : '']">
                         <span>{{item}}</span>
                       </button>
 
@@ -511,7 +510,7 @@
               <div v-if="activeTab == 2 && isLargeScreen">
                 <table class="w-100 border-top-left-20 border-top-right-20 overflow-hidden ff-roboto mt-4">
                   <thead>
-                    <tr class="bg-gray-bg-illustr">
+                    <tr class="bg-gray-base">
                       <td colspan="2" class="px-2 py-3">
                         <strong>Контакты</strong>
                       </td>
@@ -558,7 +557,7 @@
             </div>
 
           </div>
-        </section> -->
+        </section>
         <!-- Slider -->
         <section class="mt-120">
           <div class="d-flex flex-row align-items-center gap-2">
@@ -600,11 +599,12 @@
       </div>
     </main>
     <script src="./js/swiper-bundle.min.js"></script>
+    <script src="./js/swiper-main-page.js"></script>
 
     @@include('./components/_footer.html')
     @@include('./components/_scripts.html')
   </div>
-  <!-- <script>
+  <script>
     const { createApp, ref } = Vue
 
     createApp({
@@ -934,7 +934,7 @@
             // Пункт меню.
             document.querySelector('#app #mapRegion .nav-radio__elem-all').classList.add('nav-radio__elem-active')
 
-            var menuItem = $('<div class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"><span>' + group.name + '</span></div>'),
+            var menuItem = $('<div class="default-tab nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"><span>' + group.name + '</span></div>'),
               // Коллекция для геообъектов группы.
               collection = new ymaps.GeoObjectCollection(null, { preset: group.style }),
               // Контейнер для подменю.
@@ -1081,7 +1081,7 @@
         ymaps.ready(this.init)
       }
     }).mount('#app')
-  </script> -->
+  </script>
 </body>
 
 </html>

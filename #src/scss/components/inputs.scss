@@ -1,0 +1,98 @@
+.input {
+  border-radius: 100px;
+  padding-inline: 20px;
+  border-color: var(--color-gray-stroke);
+  border-style: solid;
+  outline: none;
+  box-shadow: none;
+  transition: $transition-3;
+  height: 45px;
+  background-color: var(--color-white);
+
+  @include hover("border-color", var(--color-violet-hover));
+
+  &:focus {
+    border-color: var(--color-violet);
+  }
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  --weight: 0.2px;
+  --aa: 1px;
+  --color: var(--color-gray-txt);
+  border-radius: 1px;
+  background-color: var(--color-gray-txt);
+  background: linear-gradient(
+      45deg,
+      transparent calc(50% - var(--weight) - var(--aa)),
+      var(--color) calc(50% - var(--weight)),
+      var(--color) calc(50% + var(--weight)),
+      transparent calc(50% + var(--weight) + var(--aa))
+    ),
+    linear-gradient(
+      -45deg,
+      transparent calc(50% - var(--weight) - var(--aa)),
+      var(--color) calc(50% - var(--weight)),
+      var(--color) calc(50% + var(--weight)),
+      transparent calc(50% + var(--weight) + var(--aa))
+    );
+  cursor: pointer;
+}
+
+input[type="search"]:not(:placeholder-shown)::-webkit-search-cancel-button {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+input[type="search"]:not(:placeholder-shown)::-moz-search-cancel-button {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.form-date {
+  position: relative;
+  label {
+    position: absolute;
+    top: 10.5px;
+    left: 1rem;
+    color: var(--color-gray-txt);
+  }
+  input.form-control {
+    border-radius: 9.375rem;
+    padding: 10.5px;
+    padding-left: 2.375rem;
+    font-family: $ff-roboto;
+    border: 1.5px solid (--color-gray-stroke);
+    transition: $transition-3;
+    @include hover("border-color", var(--color-violet-hover));
+    background-color: var(--color-white);
+    &:focus {
+      box-shadow: none;
+      border-color: var(--color-violet);
+    }
+  }
+}
+.form-control.is-invalid,
+.was-validated .floating-input:invalid {
+  border-color: var(--color-red-error);
+}
+.form-input.invalid {
+  .form-control,
+  .form-select {
+    border-color: var(--color-red-error);
+  }
+  .input-label-error {
+    display: block;
+    color: var(--color-red-attention);
+    font-size: 0.875rem;
+    user-select: none;
+  }
+}
+.form-input:not(.invalid) {
+  .input-label-error {
+    display: none;
+  }
+}
