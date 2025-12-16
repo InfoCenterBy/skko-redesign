@@ -3,10 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileNav = document.querySelector(".mobile-header__nav");
   const mobileSearch = document.querySelector(".mobile-header__search-body");
   const mobileSearchBtn = document.querySelector(".mobile-header__search-btn");
-  const mobileSearchCloseBtn = document.querySelector(
-    ".mobile-header__search-close"
-  );
+  const mobileSearchCloseBtn = document.querySelector(".mobile-header__search-close");
   const mobileSearchContent = document.querySelector(".mobile-header__content");
+  const mobileMenuItems = document.querySelectorAll(".mobile-header__nav-item");
   const mobileLogo = document.querySelector(".header-logo");
   const mobileTel = document.querySelector(".mobile-header__tel");
   const body = document.body;
@@ -51,4 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileSearchContent.classList.remove("w-100");
     });
   }
+
+  mobileMenuItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      body.classList.remove("no-scroll");
+      menuToggle.classList.toggle("open");
+      mobileNav.classList.toggle("open");
+    });
+  });
 });
