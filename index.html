@@ -29,7 +29,7 @@
       <div class="search-block d-lg-block d-none">
         <form class="form-group d-flex flex-row align-items-center w-100" action="">
           <div class="floating-label-content w-100">
-            <input class="floating-input" id="title-search-input" type="text" name="q" maxlength="50" size="30" autocomplete="off">
+            <input class="floating-input" id="title-search-input" type="text" name="q" maxlength="50" size="30" autocomplete="off" placeholder="">
             <label class="floating-label">Поиск</label>
           </div>
           <div class="ms-2">
@@ -52,10 +52,10 @@
       </div>
 
       <div class="d-lg-flex gap-3 d-none">
-        <a href="https://new.ckta.by/" class="btn-default flex-shrink-0">
+        <a href="#" class="btn-default flex-shrink-0">
           Войти
         </a>
-        <a href="https://new.ckta.by/" class="btn-empty flex-shrink-0">
+        <a href="#" class="btn-empty flex-shrink-0">
           Портал самообслуживания
         </a>
       </div>
@@ -105,12 +105,12 @@
     </div>
     <div class="mobile-header__nav">
       <ul class="d-flex flex-column gap-4 list-unstyled">
-        <li><a class="text-uppercase color-white ff-exo fs-20" href="">Новости</a></li>
+        <li><a class="text-uppercase color-white ff-exo fs-20" href="news.html">Новости</a></li>
         <li><a class="text-uppercase color-white ff-exo fs-20" href="">Услуги и оплата</a></li>
         <li><a class="text-uppercase color-white ff-exo fs-20" href="">Пользователям СККО</a></li>
         <li><a class="text-uppercase color-white ff-exo fs-20" href="">Документы</a></li>
         <li><a class="text-uppercase color-white ff-exo fs-20" href="">База знаний</a></li>
-        <li><a class="text-uppercase color-white ff-exo fs-20" href="">контакты</a></li>
+        <li><a class="text-uppercase color-white ff-exo fs-20" href="">Контакты</a></li>
       </ul>
       <div class="d-flex flex-wrap gap-3 mt-40">
         <a href="https://new.ckta.by/" class="btn-default__white flex-shrink-0">
@@ -178,9 +178,7 @@
                     Портал самообслуживания
                   </a>
                 </div>
-                <div
-                  class="main-banner-container d-flex flex-wrap flex-md-nowrap gap-3 align-items-center justify-content-center justify-content-xl-between mt-2"
-                  bis_skin_checked="1">
+                <div class="d-flex gap-2 align-items-center justify-content-between me-3">
                   <img class="main-banner__img" src="./img/main-banner/banner-img-1.png" alt="">
                   <img class="main-banner__img d-none d-md-flex d-lg-none d-xxl-flex" src="./img/main-banner/banner-img-2.png" alt="">
                 </div>
@@ -362,7 +360,7 @@
           </div>
         </section>
         <!-- for SKKO users -->
-        <section class="mt-120">
+        <section id="skko-users" class="mt-120">
           <h2 class="block-title">пользователям СККО</h2>
           <div class="row row-cols-1 row-cols-lg-2 row-gap-4 mt-32">
             <div class="col d-flex">
@@ -500,7 +498,7 @@
 
         </section>
         <!-- Services and payment -->
-        <section class="mt-120">
+        <section id="payment" class="mt-120">
           <h2 class="block-title">Услуги и оплата</h2>
           <div class="row row-cols-1 row-cols-lg-2 row-gap-4 mt-32">
             <div class="col d-flex">
@@ -615,11 +613,10 @@
           </div>
         </section>
         <!-- Contacts -->
-        <!-- <section class="mt-120">
+        <section id="contacts" class="mt-120">
           <h2 class="block-title">Контакты</h2>
           <div class="container mt-32">
-            <script src=""></script>
-            <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+            <script src="./js/vue.js"></script>
             <div id="app">
               <div class="row">
                 <div class="col-lg-9 d-flex my-2 order-lg-1 order-2">
@@ -632,8 +629,8 @@
                       <button class="default-tab" @click="filterTable('')" :class="[filteredTerms == '' ? 'nav-radio__elem-active' : '']">
                         <span>Все</span>
                       </button>
-                      <button v-for="item in uniqueCities" class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty" @click="filterTable(item)"
-                        :class="[filteredTerms == item ? 'nav-radio__elem-active' : '']">
+                      <button v-for="item in uniqueCities" class="default-tab nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"
+                        @click="filterTable(item)" :class="[filteredTerms == item ? 'nav-radio__elem-active' : '']">
                         <span>{{item}}</span>
                       </button>
 
@@ -663,7 +660,7 @@
               <div v-if="activeTab == 2 && isLargeScreen">
                 <table class="w-100 border-top-left-20 border-top-right-20 overflow-hidden ff-roboto mt-4">
                   <thead>
-                    <tr class="bg-gray-bg-illustr">
+                    <tr class="bg-gray-base">
                       <td colspan="2" class="px-2 py-3">
                         <strong>Контакты</strong>
                       </td>
@@ -710,7 +707,7 @@
             </div>
 
           </div>
-        </section> -->
+        </section>
         <!-- Slider -->
         <section class="mt-120">
           <div class="d-flex flex-row align-items-center gap-2">
@@ -881,7 +878,7 @@
 </footer>
     <script src="../js/script.js"></script>
   </div>
-  <!-- <script>
+  <script>
     const { createApp, ref } = Vue
 
     createApp({
@@ -1211,7 +1208,7 @@
             // Пункт меню.
             document.querySelector('#app #mapRegion .nav-radio__elem-all').classList.add('nav-radio__elem-active')
 
-            var menuItem = $('<div class="nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"><span>' + group.name + '</span></div>'),
+            var menuItem = $('<div class="default-tab nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"><span>' + group.name + '</span></div>'),
               // Коллекция для геообъектов группы.
               collection = new ymaps.GeoObjectCollection(null, { preset: group.style }),
               // Контейнер для подменю.
@@ -1358,7 +1355,7 @@
         ymaps.ready(this.init)
       }
     }).mount('#app')
-  </script> -->
+  </script>
 </body>
 
 </html>
