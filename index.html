@@ -171,16 +171,22 @@
                   </p>
                 </div>
                 <div class="d-flex gap-3 flex-wrap flex-lg-nowrap">
-                  <a href="https://new.ckta.by/" class="btn-default mobile-w-100">
+                  <a href="#" class="btn-default mobile-w-100">
                     Войти
                   </a>
-                  <a href="https://new.ckta.by/" class="btn-empty mobile-w-100">
+                  <a href="#" class="btn-empty mobile-w-100">
                     Портал самообслуживания
                   </a>
                 </div>
-                <div class="d-flex gap-2 align-items-center justify-content-between">
+                <div class="d-flex d-sm-none flex-column gap-4 align-items-center justify-content-center">
                   <img class="main-banner__img" src="./img/main-banner/banner-img-1.png" alt="">
-                  <img class="main-banner__img d-none d-md-flex d-lg-none d-xxl-flex me-3" src="./img/main-banner/banner-img-2.png" alt="">
+                </div>
+                <div class="d-none d-sm-flex d-md-none d-lg-flex d-xl-none flex-column gap-4 align-items-center justify-content-center">
+                  <img class="main-banner__img" src="./img/main-banner/banner-img-1.png" alt="">
+                  <img class="main-banner__img" src="./img/main-banner/banner-img-2.png" alt="">
+                </div>
+                <div class="d-none d-md-flex d-lg-none d-xl-flex gap-2 align-items-center justify-content-center">
+                  <img class="main-banner__img" src="./img/main-banner/banner-img-full.png" alt="">
                 </div>
               </div>
 
@@ -559,21 +565,20 @@
             <div class="col d-flex">
               <div class="bg-gray-base p-40-to-16 border-30 w-100">
                 <ul class="nav nav-pills default-tabs mb-3" id="services-tabs" role="tablist">
-                  <li class="nav-item" role="presentation">
-                    <button class="active default-tab" id="account-details-tab" data-bs-toggle="pill" data-bs-target="#account-details" type="button" role="tab"
-                      aria-controls="account-details" aria-selected="true">Реквизиты</button>
-                  </li>
                   <li class="nav-item " role="presentation">
-                    <a class="default-tab" href="https://github.com/InfoCenterBy/skko-redesign" target="_blank">Способы
-                      оплаты</a>
-                  </li>
-                  <li class="nav-item " role="presentation">
-                    <button class="default-tab" id="price-lists-tab" data-bs-toggle="pill" data-bs-target="#price-lists" type="button" role="tab"
+                    <button class="active default-tab" id="price-lists-tab" data-bs-toggle="pill" data-bs-target="#price-lists" type="button" role="tab"
                       aria-controls="price-lists" aria-selected="false">Прейскуранты</button>
+                  </li>
+                  <li class="nav-item " role="presentation">
+                    <a class="default-tab" href="https://github.com/InfoCenterBy/skko-redesign" target="_blank">Способы оплаты</a>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="default-tab" id="account-details-tab" data-bs-toggle="pill" data-bs-target="#account-details" type="button" role="tab"
+                      aria-controls="account-details" aria-selected="true">Реквизиты</button>
                   </li>
                 </ul>
                 <div class="tab-content" id="services-tabContent">
-                  <div class="tab-pane fade show active" id="account-details" role="tabpanel" aria-labelledby="account-details-tab" tabindex="0">
+                  <div class="tab-pane fade" id="account-details" role="tabpanel" aria-labelledby="account-details-tab" tabindex="0">
                     <div>
                       <p class="fs-20 ff-exo fw-semibold mb-3">Реквизиты Предприятия:</p>
                       <p class="fw-semibold mb-2">Полное наименование</p>
@@ -597,7 +602,7 @@
                       <p class="mb-3">г. Минск, пр. Независимости, 56</p>
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="price-lists" role="tabpanel" aria-labelledby="price-lists-tab" tabindex="0">
+                  <div class="tab-pane fade show active" id="price-lists" role="tabpanel" aria-labelledby="price-lists-tab" tabindex="0">
                     <div class="d-flex flex-column gap-2">
                       <a class="link-activity" href="">Прейскурант на услуги, оказываемые пользователям кассовых аппаратов</a>
                       <a class="link-activity" href="">Прейскурант на услуги, оказываемые пользователям программных касс</a>
@@ -615,97 +620,94 @@
         <!-- Contacts -->
         <section id="contacts" class="mt-120">
           <h2 class="block-title">Контакты</h2>
-          <div class="container mt-32">
-            <script src="./js/vue.js"></script>
-            <div id="app">
-              <div class="row">
-                <div class="col-lg-9 d-flex my-2 order-lg-1 order-2">
-                  <div class="d-flex flex-row flex-lg-wrap gap-3 nav-radio overflow-auto flex-nowrap align-items-start" id="mapRegion">
+          <script src="./js/vue.js"></script>
+          <div class="mt-32" id="app">
+            <div class="row">
+              <div class="col-lg-9 d-flex my-2 order-lg-1 order-2">
+                <div class="d-flex flex-row flex-lg-wrap gap-3 nav-radio overflow-auto flex-nowrap align-items-start" id="mapRegion">
 
-                    <button class="default-tab" v-if="activeTab == 1">
+                  <button class="default-tab" v-if="activeTab == 1">
+                    <span>Все</span>
+                  </button>
+                  <template v-if="activeTab == 2">
+                    <button class="default-tab" @click="filterTable('')" :class="[filteredTerms == '' ? 'nav-radio__elem-active' : '']">
                       <span>Все</span>
                     </button>
-                    <template v-if="activeTab == 2">
-                      <button class="default-tab" @click="filterTable('')" :class="[filteredTerms == '' ? 'nav-radio__elem-active' : '']">
-                        <span>Все</span>
-                      </button>
-                      <button v-for="item in uniqueCities" class="default-tab nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty"
-                        @click="filterTable(item)" :class="[filteredTerms == item ? 'nav-radio__elem-active' : '']">
-                        <span>{{item}}</span>
-                      </button>
+                    <button v-for="item in uniqueCities" class="default-tab nav-radio__elem nav-radio__elem-lg nav-radio__elem-empty" @click="filterTable(item)"
+                      :class="[filteredTerms == item ? 'nav-radio__elem-active' : '']">
+                      <span>{{item}}</span>
+                    </button>
 
-                    </template>
-                  </div>
-                </div>
-                <div class="col-lg-3 d-flex justify-content-lg-end my-2 order-lg-2 order-1">
-                  <div class="d-flex flex-row flex-lg-wrap gap-3 nav-radio flex-nowrap align-items-start justify-content-end">
-                    <button class="default-tab" :class="[activeTab == 1 ? 'active' : '']" @click="changeTab(1)">
-                      <span>На карте</span>
-                    </button>
-                    <button class="default-tab" :class="[activeTab == 2 ? 'active' : '']" @click="changeTab(2)" v-if="isLargeScreen">
-                      <span>Таблица</span>
-                    </button>
-                  </div>
+                  </template>
                 </div>
               </div>
-              <div v-if="activeTab == 1">
-                <div class="map-cards-wrapper">
-                  <div class="" id="mapCards">
-                    <div class="map-cards">
-                    </div>
-                  </div>
+              <div class="col-lg-3 d-flex justify-content-lg-end my-2 order-lg-2 order-1">
+                <div class="d-flex flex-row flex-lg-wrap gap-3 nav-radio flex-nowrap align-items-start justify-content-end">
+                  <button class="default-tab" :class="[activeTab == 1 ? 'active' : '']" @click="changeTab(1)">
+                    <span>На карте</span>
+                  </button>
+                  <button class="default-tab" :class="[activeTab == 2 ? 'active' : '']" @click="changeTab(2)" v-if="isLargeScreen">
+                    <span>Таблица</span>
+                  </button>
                 </div>
-                <div id="contact_map" class="mt-3" style="width:100%; height:754px"></div>
-              </div>
-              <div v-if="activeTab == 2 && isLargeScreen">
-                <table class="w-100 border-top-left-20 border-top-right-20 overflow-hidden ff-roboto mt-4">
-                  <thead>
-                    <tr class="bg-gray-base">
-                      <td colspan="2" class="px-2 py-3">
-                        <strong>Контакты</strong>
-                      </td>
-                      <td colspan="2" class="px-2 py-3">
-                        <strong>Режим работы</strong>
-                      </td>
-                      <td colspan="3" class="px-2 py-3">
-                        <strong>Статус</strong>
-                      </td>
-                      <td colspan="2" class="px-2 py-3">
-                        <strong>Комментарий</strong>
-                      </td>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="item in filteredTableItems" class="border-bottom">
-                      <td colspan="2" class="px-2 py-3">
-                        {{item.contacts?.adress}} ({{item.name}}) <br>
-                        <span v-if="item.contacts.tel">тел:
-                          {{item.contacts.tel}}</span>
-                        <br>
-                        <span v-if="item.contacts.fax">факс:
-                          {{item.contacts.fax}}</span>
-                        <br>
-                        <span v-if="item.contacts.email">email:
-                          {{item.contacts.email}}</span> <br>
-                      </td>
-                      <td colspan="2" class="px-2 py-3">
-                        <span v-if="item.workTime != 0" v-html="item.workTime"></span>
-                      </td>
-                      <td colspan="3" class="px-2 py-3">
-                        <div class="map-cards-item__status text-center"
-                          :class="[item.status.active ? 'map-cards-item__status-active' : 'map-cards-item__status-disabled']">
-                          <span class="text-wrap text-center">{{item.status.text}}</span>
-                        </div>
-                      </td>
-                      <td colspan="3" class="px-2 py-3">
-                        <span v-if="item.comment != 0" v-html="item.comment"></span>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
             </div>
-
+            <div v-if="activeTab == 1">
+              <div class="map-cards-wrapper">
+                <div class="" id="mapCards">
+                  <div class="map-cards">
+                  </div>
+                </div>
+              </div>
+              <div id="contact_map" class="mt-3" style="width:100%; height:754px"></div>
+            </div>
+            <div v-if="activeTab == 2 && isLargeScreen">
+              <table class="w-100 border-top-left-20 border-top-right-20 overflow-hidden ff-roboto mt-4">
+                <thead>
+                  <tr class="bg-gray-base">
+                    <td colspan="2" class="px-2 py-3">
+                      <strong>Контакты</strong>
+                    </td>
+                    <td colspan="2" class="px-2 py-3">
+                      <strong>Режим работы</strong>
+                    </td>
+                    <td colspan="3" class="px-2 py-3">
+                      <strong>Статус</strong>
+                    </td>
+                    <td colspan="2" class="px-2 py-3">
+                      <strong>Комментарий</strong>
+                    </td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="item in filteredTableItems" class="border-bottom">
+                    <td colspan="2" class="px-2 py-3">
+                      {{item.contacts?.adress}} ({{item.name}}) <br>
+                      <span v-if="item.contacts.tel">тел:
+                        {{item.contacts.tel}}</span>
+                      <br>
+                      <span v-if="item.contacts.fax">факс:
+                        {{item.contacts.fax}}</span>
+                      <br>
+                      <span v-if="item.contacts.email">email:
+                        {{item.contacts.email}}</span> <br>
+                    </td>
+                    <td colspan="2" class="px-2 py-3">
+                      <span v-if="item.workTime != 0" v-html="item.workTime"></span>
+                    </td>
+                    <td colspan="3" class="px-2 py-3">
+                      <div class="map-cards-item__status text-center"
+                        :class="[item.status.active ? 'map-cards-item__status-active' : 'map-cards-item__status-disabled']">
+                        <span class="text-wrap text-center">{{item.status.text}}</span>
+                      </div>
+                    </td>
+                    <td colspan="3" class="px-2 py-3">
+                      <span v-if="item.comment != 0" v-html="item.comment"></span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </section>
         <!-- Slider -->
