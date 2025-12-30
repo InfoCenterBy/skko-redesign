@@ -24,6 +24,7 @@ $colorsMap: (
   "red-pressed": "#BC2929",
   "green-success": "#48B16E",
   "gold-light": "#F6C679",
+  "gold-dark": "#C47A2C",
   "red-light": "#F5DDDD",
   "yellow-system": "#FFF3E0",
   "info-light": "#D8E9FF",
@@ -45,7 +46,7 @@ $transitionMap: (
 $transition-2: all ease-out 0.2s;
 $transition-3: all ease-out 0.3s;
 
-$ff-roboto: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+$ff-roboto: "Roboto";
 $ff-exo: "Exo 2";
 
 $fontSizeMap: (10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 34, 44, 64);

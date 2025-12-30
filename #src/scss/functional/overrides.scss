@@ -330,3 +330,39 @@
     content: none;
   }
 }
+
+.fs-18-to-14 {
+  font-size: 18px;
+
+  @media screen and (max-width: 1300px) {
+    font-size: 14px;
+  }
+}
+
+.max-w-220 {
+  @media screen and (max-width: 1300px) {
+    max-width: 220px;
+  }
+}
+
+.custom-header-input {
+  @media screen and (max-width: 1300px) {
+    max-width: 220px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+.custom-header-label {
+  @media screen and (max-width: 1300px) {
+    top: 13px;
+    font-size: 14px;
+  }
+}
+
+.custom-header-button-search {
+  @media screen and (max-width: 1300px) {
+    min-width: 40px;
+    min-height: 40px;
+  }
+}

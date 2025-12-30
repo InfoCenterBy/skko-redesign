@@ -1,11 +1,15 @@
 .block-title {
   font-family: $ff-exo;
   color: var(--color-black);
-  font-size: 28px;
+  font-size: 34px;
   font-weight: 600;
   line-height: 130%;
   letter-spacing: 0;
   text-transform: uppercase;
+
+  @media screen and (max-width: 576px) {
+    font-size: 28px;
+  }
 }
 
 .block-subtitle {
@@ -30,6 +34,8 @@
   height: 200px;
   display: flex;
   flex-direction: column;
+  transition: $transition-2;
+  color: var(--color-black);
 
   &__title {
     font-weight: 600;
@@ -59,6 +65,13 @@
 
     @media screen and (max-width: 576px) {
       padding: 16px;
+    }
+  }
+
+  @media #{$mouse-device} {
+    &:hover {
+      border-color: transparent;
+      background-color: var(--color-gray-base);
     }
   }
 }

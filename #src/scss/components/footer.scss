@@ -37,5 +37,5 @@
   line-height: 130%;
   letter-spacing: 0;
   transition: $transition-2;
-  @include hover("color", var(--color-yellow-light));
+  @include hover("color", var(--color-gold-dark));
 }
